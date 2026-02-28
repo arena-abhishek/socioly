@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/xampp/htdocs/freelance%20work/exato/socioly/app/loading.tsx"],"sourcesContent":["import Container from \"@/components/ui/Container\";\n\nexport default function Loading() {\n  return (\n    <div className=\"min-h-[70vh] flex items-center justify-center\">\n      <Container className=\"text-center\">\n        <div className=\"inline-block w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin\"></div>\n        <p className=\"mt-4 text-slate-600 font-medium\">Loading Socioly...</p>\n      </Container>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC,yIAAS;YAAC,WAAU;;8BACnB,8OAAC;oBAAI,WAAU;;;;;;8BACf,8OAAC;oBAAE,WAAU;8BAAkC;;;;;;;;;;;;;;;;;AAIvD"}}]
+}

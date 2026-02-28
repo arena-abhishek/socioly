@@ -1,0 +1,5 @@
+{
+  "name": "Socioly",
+  "description": "A production-grade, SEO-optimized frontend for Socioly, built with Next.js 15, Tailwind CSS, and Supabase.",
+  "requestFramePermissions": []
+}
