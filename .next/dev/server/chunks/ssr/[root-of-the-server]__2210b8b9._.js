@@ -31,23 +31,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2
 let supabaseInstance = null;
 const getSupabase = ()=>{
     if (supabaseInstance) return supabaseInstance;
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    if (!supabaseUrl || !supabaseAnonKey) {
-        console.warn('Supabase environment variables are missing. Using a dummy client for build.');
-        // Return a dummy client or handle it gracefully
-        // For build purposes, we can return a proxy or just a dummy
-        return {};
-    }
+    const supabaseUrl = ("TURBOPACK compile-time value", "https://nevefdkkrpjlxglayitn.supabase.co");
+    const supabaseAnonKey = ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ldmVmZGtrcnBqbHhnbGF5aXRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0NTQyNzQsImV4cCI6MjA4NzAzMDI3NH0.BufQlHHTJ6OZ13YmOzv-kIY7oNM2LNlnhY6Yox5vvac");
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
     supabaseInstance = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(supabaseUrl, supabaseAnonKey);
     return supabaseInstance;
 };
 const getSupabaseServer = ()=>{
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    if (!supabaseUrl || !serviceRoleKey) {
-        throw new Error('Supabase server environment variables are missing.');
-    }
+    const supabaseUrl = ("TURBOPACK compile-time value", "https://nevefdkkrpjlxglayitn.supabase.co");
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ldmVmZGtrcnBqbHhnbGF5aXRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0NTQyNzQsImV4cCI6MjA4NzAzMDI3NH0.BufQlHHTJ6OZ13YmOzv-kIY7oNM2LNlnhY6Yox5vvac");
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(supabaseUrl, serviceRoleKey);
 };
 }),

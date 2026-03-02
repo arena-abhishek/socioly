@@ -8,6 +8,10 @@ import Hero from '@/components/sections/Hero';
 import StackCards from '@/components/sections/StackCards';
 import WhyChoose from '@/components/sections/WhyChoose';
 import ServicesSection from '@/components/sections/ServicesSection';
+import FaqSection from '@/components/sections/FaqSection';
+import WorkProcess from '@/components/sections/WorkProcess';
+import Clients from '@/components/sections/Clients';
+import ReviewContactSection from '@/components/sections/ReviewContactSection';
 
 export const revalidate = 60; // ISR: Revalidate every 60 seconds
 
@@ -21,11 +25,11 @@ export default async function HomePage() {
   const featuredServices = services.slice(0, 4);
 
   return (
-    <div className="space-y-24 pb-24">
+    <div className="space-y-24 pb-24 overflow-x-hidden">
       {/* Hero Section */}
       <Hero />
 
-      <section className="relative h-[80vh] flex items-center overflow-hidden bg-slate-900 text-white">
+      {/* <section className="relative h-[80vh] flex items-center overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 z-0 opacity-40">
           <Image
             src="https://picsum.photos/seed/socioly-hero/1920/1080"
@@ -53,14 +57,18 @@ export default async function HomePage() {
             </div>
           </div>
         </Container>
-      </section>
+      </section> */}
 
       {/* Services Section */}
 
       <StackCards />
-      <WhyChoose />
       <ServicesSection />
-      <section>
+      <WhyChoose />
+      <WorkProcess/>
+      <FaqSection/>
+      <ReviewContactSection />
+      <Clients/>
+      {/* <section>
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold">Expert Solutions for Modern Brands</h2>
@@ -88,8 +96,6 @@ export default async function HomePage() {
           </div>
         </Container>
       </section>
-
-      {/* Blog Section */}
       <section className="bg-slate-50 py-24">
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
@@ -125,7 +131,7 @@ export default async function HomePage() {
             ))}
           </div>
         </Container>
-      </section>
+      </section> */}
     </div>
   );
 }

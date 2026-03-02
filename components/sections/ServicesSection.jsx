@@ -66,7 +66,13 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="relative py-24 bg-gray-50 overflow-hidden">
+      {/* Left Background Vectors */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="services-vector"></div>
+        <div className="services-vector services-vector-2"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 relative">
         {/* Heading + Top Right Arrows */}
         <div className="flex justify-between items-center mb-12">

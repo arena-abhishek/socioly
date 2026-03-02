@@ -13,16 +13,22 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function BreadcrumbSection({ title, items, backgroundImage }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: " relative w-full text-white pt-[clamp(106px,10.83vw,206px)] pb-[clamp(31px,4.78vw,91px)]",
+        className: "relative w-full text-white pt-[clamp(106px,10.83vw,206px)] pb-[clamp(31px,4.78vw,91px)]",
         style: {
-            background: backgroundImage ? `url(${backgroundImage}) center/cover no-repeat` : "linear-gradient(135deg,#2f4bff,#7a00ff)"
+            background: `
+      linear-gradient(135deg, rgba(47,75,255,0.85), rgba(122,0,255,0.85)),
+      url(https://www.socioly.in/assets/img/banner-bg-shape.svg)
+    `,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat"
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-black/30"
             }, void 0, false, {
                 fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                lineNumber: 32,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -39,14 +45,14 @@ function BreadcrumbSection({ title, items, backgroundImage }) {
                                         children: item.label
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 44,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-white/80",
                                         children: item.label
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 51,
                                         columnNumber: 17
                                     }, this),
                                     index !== items.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -54,18 +60,18 @@ function BreadcrumbSection({ title, items, backgroundImage }) {
                                         children: "›"
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                        lineNumber: 52,
+                                        lineNumber: 55,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                lineNumber: 39,
+                                lineNumber: 42,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                        lineNumber: 37,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -73,13 +79,13 @@ function BreadcrumbSection({ title, items, backgroundImage }) {
                         children: title
                     }, void 0, false, {
                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                        lineNumber: 59,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                lineNumber: 34,
+                lineNumber: 38,
                 columnNumber: 7
             }, this)
         ]
@@ -181,7 +187,8 @@ function FaqSection() {
                                     clipPath: "url(#faqCurve)"
                                 },
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    src: "/faq-img.png",
+                                    // src="/faq-img.png"
+                                    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
                                     alt: "FAQ",
                                     fill: true,
                                     className: "object-cover",
@@ -212,14 +219,14 @@ function FaqSection() {
                                         className: "w-5 h-2 bg-indigo-500 rounded-full"
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/FaqSection.tsx",
-                                        lineNumber: 68,
+                                        lineNumber: 69,
                                         columnNumber: 13
                                     }, this),
                                     "Frequently Ask Question"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/sections/FaqSection.tsx",
-                                lineNumber: 67,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -227,7 +234,7 @@ function FaqSection() {
                                 children: "Let's Meet And Work Together Your Project"
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/FaqSection.tsx",
-                                lineNumber: 72,
+                                lineNumber: 73,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -244,20 +251,20 @@ function FaqSection() {
                                                         children: item.question
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/sections/FaqSection.tsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 87,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                         className: `transition-transform duration-300 ${active === index ? "rotate-90 text-indigo-600" : "text-gray-500"}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/sections/FaqSection.tsx",
-                                                        lineNumber: 96,
+                                                        lineNumber: 97,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/sections/FaqSection.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 83,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -282,29 +289,29 @@ function FaqSection() {
                                                     children: item.answer
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/sections/FaqSection.tsx",
-                                                    lineNumber: 107,
+                                                    lineNumber: 108,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/sections/FaqSection.tsx",
-                                                lineNumber: 105,
+                                                lineNumber: 106,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, index, true, {
                                         fileName: "[project]/components/sections/FaqSection.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 79,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/FaqSection.tsx",
-                                lineNumber: 76,
+                                lineNumber: 77,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/sections/FaqSection.tsx",
-                        lineNumber: 65,
+                        lineNumber: 66,
                         columnNumber: 9
                     }, this)
                 ]
@@ -317,7 +324,7 @@ function FaqSection() {
                 className: "absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-gradient-to-tr from-indigo-400 via-purple-400 to-blue-400 rounded-full blur-3xl opacity-30"
             }, void 0, false, {
                 fileName: "[project]/components/sections/FaqSection.tsx",
-                lineNumber: 125,
+                lineNumber: 126,
                 columnNumber: 7
             }, this)
         ]

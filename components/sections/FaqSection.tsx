@@ -52,7 +52,8 @@ export default function FaqSection() {
             style={{ clipPath: "url(#faqCurve)" }}
           >
             <Image
-              src="/faq-img.png"
+              // src="/faq-img.png"
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
               alt="FAQ"
               fill
               className="object-cover"

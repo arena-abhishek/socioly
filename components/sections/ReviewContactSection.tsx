@@ -18,7 +18,8 @@ export default function ReviewContactSection() {
       {/* Left Full Image */}
       <div className="absolute left-0 top-0 bottom-0 w-[38%] hidden lg:block">
         <Image
-          src="/assets/img/contact-review-bg-img.jpg"
+          // src="/assets/img/contact-review-bg-img.jpg"
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
           alt="Background"
           fill
           className="object-cover"

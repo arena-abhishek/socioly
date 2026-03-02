@@ -13,16 +13,22 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function BreadcrumbSection({ title, items, backgroundImage }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: " relative w-full text-white pt-[clamp(106px,10.83vw,206px)] pb-[clamp(31px,4.78vw,91px)]",
+        className: "relative w-full text-white pt-[clamp(106px,10.83vw,206px)] pb-[clamp(31px,4.78vw,91px)]",
         style: {
-            background: backgroundImage ? `url(${backgroundImage}) center/cover no-repeat` : "linear-gradient(135deg,#2f4bff,#7a00ff)"
+            background: `
+      linear-gradient(135deg, rgba(47,75,255,0.85), rgba(122,0,255,0.85)),
+      url(https://www.socioly.in/assets/img/banner-bg-shape.svg)
+    `,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat"
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-black/30"
             }, void 0, false, {
                 fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                lineNumber: 32,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -39,14 +45,14 @@ function BreadcrumbSection({ title, items, backgroundImage }) {
                                         children: item.label
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 44,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-white/80",
                                         children: item.label
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 51,
                                         columnNumber: 17
                                     }, this),
                                     index !== items.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -54,18 +60,18 @@ function BreadcrumbSection({ title, items, backgroundImage }) {
                                         children: "›"
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                        lineNumber: 52,
+                                        lineNumber: 55,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                lineNumber: 39,
+                                lineNumber: 42,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                        lineNumber: 37,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -73,13 +79,13 @@ function BreadcrumbSection({ title, items, backgroundImage }) {
                         children: title
                     }, void 0, false, {
                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                        lineNumber: 59,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                lineNumber: 34,
+                lineNumber: 38,
                 columnNumber: 7
             }, this)
         ]

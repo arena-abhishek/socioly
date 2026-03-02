@@ -13,16 +13,22 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function BreadcrumbSection({ title, items, backgroundImage }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: " relative w-full text-white pt-[clamp(106px,10.83vw,206px)] pb-[clamp(31px,4.78vw,91px)]",
+        className: "relative w-full text-white pt-[clamp(106px,10.83vw,206px)] pb-[clamp(31px,4.78vw,91px)]",
         style: {
-            background: backgroundImage ? `url(${backgroundImage}) center/cover no-repeat` : "linear-gradient(135deg,#2f4bff,#7a00ff)"
+            background: `
+      linear-gradient(135deg, rgba(47,75,255,0.85), rgba(122,0,255,0.85)),
+      url(https://www.socioly.in/assets/img/banner-bg-shape.svg)
+    `,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat"
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-black/30"
             }, void 0, false, {
                 fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                lineNumber: 32,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -39,14 +45,14 @@ function BreadcrumbSection({ title, items, backgroundImage }) {
                                         children: item.label
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 44,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-white/80",
                                         children: item.label
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 51,
                                         columnNumber: 17
                                     }, this),
                                     index !== items.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -54,18 +60,18 @@ function BreadcrumbSection({ title, items, backgroundImage }) {
                                         children: "›"
                                     }, void 0, false, {
                                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                        lineNumber: 52,
+                                        lineNumber: 55,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                                lineNumber: 39,
+                                lineNumber: 42,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                        lineNumber: 37,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -73,13 +79,13 @@ function BreadcrumbSection({ title, items, backgroundImage }) {
                         children: title
                     }, void 0, false, {
                         fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                        lineNumber: 59,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/ui/BreadcrumbSection.tsx",
-                lineNumber: 34,
+                lineNumber: 38,
                 columnNumber: 7
             }, this)
         ]
@@ -155,7 +161,8 @@ function ReviewContactSection() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute left-0 top-0 bottom-0 w-[38%] hidden lg:block",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                    src: "/assets/img/contact-review-bg-img.jpg",
+                    // src="/assets/img/contact-review-bg-img.jpg"
+                    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
                     alt: "Background",
                     fill: true,
                     className: "object-cover",
@@ -174,14 +181,14 @@ function ReviewContactSection() {
                 className: "absolute left-[34%] top-0 bottom-0 w-[180px]    bg-white rotate-[10deg] origin-left hidden lg:block"
             }, void 0, false, {
                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 hidden md:block    bg-[url('/assets/img/wave.png')]    bg-no-repeat bg-right bg-contain    opacity-20 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                lineNumber: 34,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -210,7 +217,7 @@ function ReviewContactSection() {
                                     children: "Talk To Us"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -218,7 +225,7 @@ function ReviewContactSection() {
                                     children: "How May We Help You!"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                    lineNumber: 62,
+                                    lineNumber: 63,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -232,7 +239,7 @@ function ReviewContactSection() {
                                                     placeholder: "Your Name*"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                    lineNumber: 70,
+                                                    lineNumber: 71,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -240,7 +247,7 @@ function ReviewContactSection() {
                                                     placeholder: "Your Email*"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                    lineNumber: 71,
+                                                    lineNumber: 72,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -248,7 +255,7 @@ function ReviewContactSection() {
                                                     placeholder: "Subject*"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                    lineNumber: 72,
+                                                    lineNumber: 73,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -256,13 +263,13 @@ function ReviewContactSection() {
                                                     placeholder: "Your Phone*"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                    lineNumber: 73,
+                                                    lineNumber: 74,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                            lineNumber: 68,
+                                            lineNumber: 69,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -271,7 +278,7 @@ function ReviewContactSection() {
                                             className: "formInput"
                                         }, void 0, false, {
                                             fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                            lineNumber: 77,
+                                            lineNumber: 78,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -279,24 +286,24 @@ function ReviewContactSection() {
                                             children: "Send Message"
                                         }, void 0, false, {
                                             fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 84,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                    lineNumber: 66,
+                                    lineNumber: 67,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                            lineNumber: 52,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                        lineNumber: 46,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -321,7 +328,7 @@ function ReviewContactSection() {
                                 children: "Clients Review"
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                lineNumber: 99,
+                                lineNumber: 100,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -329,7 +336,7 @@ function ReviewContactSection() {
                                 children: "What They Say About Our"
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                lineNumber: 104,
+                                lineNumber: 105,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -337,7 +344,7 @@ function ReviewContactSection() {
                                 children: "It is a long established fact that a reader will be distracted by the readable content of a page."
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                lineNumber: 109,
+                                lineNumber: 110,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Swiper"], {
@@ -370,7 +377,7 @@ function ReviewContactSection() {
                                                             className: "rounded-full sm:w-[60px] sm:h-[60px]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                            lineNumber: 135,
+                                                            lineNumber: 136,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -380,7 +387,7 @@ function ReviewContactSection() {
                                                                     children: item.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                                    lineNumber: 144,
+                                                                    lineNumber: 145,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -388,7 +395,7 @@ function ReviewContactSection() {
                                                                     children: item.role
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                                    lineNumber: 147,
+                                                                    lineNumber: 148,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -403,23 +410,23 @@ function ReviewContactSection() {
                                                                                 d: "M8 0l2.39 4.85 5.36.78-3.87 3.77.91 5.3L8 12.9l-4.79 2.8.91-5.3L.25 5.63l5.36-.78L8 0z"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                                                lineNumber: 155,
+                                                                                lineNumber: 156,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         }, i, false, {
                                                                             fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                                            lineNumber: 154,
+                                                                            lineNumber: 155,
                                                                             columnNumber: 27
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                                    lineNumber: 152,
+                                                                    lineNumber: 153,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                            lineNumber: 143,
+                                                            lineNumber: 144,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -432,23 +439,23 @@ function ReviewContactSection() {
                                                                     d: "M0 14h5l3-7H3L0 14zm10 0h5l3-7h-5l-3 7z"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                                    lineNumber: 164,
+                                                                    lineNumber: 165,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                                lineNumber: 163,
+                                                                lineNumber: 164,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                            lineNumber: 162,
+                                                            lineNumber: 163,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 134,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -456,23 +463,23 @@ function ReviewContactSection() {
                                                     children: item.message
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                                    lineNumber: 170,
+                                                    lineNumber: 171,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 130,
                                             columnNumber: 17
                                         }, this)
                                     }, item.id, false, {
                                         fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 129,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                lineNumber: 114,
+                                lineNumber: 115,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -483,7 +490,7 @@ function ReviewContactSection() {
                                         children: "‹"
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                        lineNumber: 182,
+                                        lineNumber: 183,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -491,25 +498,25 @@ function ReviewContactSection() {
                                         children: "›"
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 184,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                                lineNumber: 179,
+                                lineNumber: 180,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                        lineNumber: 93,
+                        lineNumber: 94,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sections/ReviewContactSection.tsx",
-                lineNumber: 41,
+                lineNumber: 42,
                 columnNumber: 7
             }, this)
         ]
@@ -740,19 +747,19 @@ const workProcessData = [
         id: 1,
         title: "Define Requirements",
         description: "In a free hour, when our power of choice is untrammelled and when nothing prevents dolor sit amet, consectetur.",
-        image: "/process-1.jpg"
+        image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
     },
     {
         id: 2,
         title: "Design & Prototyping",
         description: "In a free hour, when our power of choice is untrammelled and when nothing prevents dolor sit amet, consectetur.",
-        image: "/process-2.jpg"
+        image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
     },
     {
         id: 3,
         title: "Final Solution",
         description: "In a free hour, when our power of choice is untrammelled and when nothing prevents dolor sit amet, consectetur.",
-        image: "/process-3.jpg"
+        image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
     }
 ];
 }),

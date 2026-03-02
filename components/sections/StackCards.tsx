@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const cards = [
   {
     id: 1,
     tag: "Problem Solving",
-    align: "left",
     title: "Empowering Brands to Thrive in the Digital World",
     description:
       "At Socioly, we blend creativity with strategy to help brands grow faster, smarter, and more effectively through data-driven digital marketing.",
@@ -25,15 +25,9 @@ const cards = [
   {
     id: 2,
     tag: "Creative Strategy",
-    align: "center",
     title: "Innovative Ideas That Drive Real Results",
-    description:
-      "We create meaningful digital experiences powered by creativity.",
-    points: [
-      "Brand-first mindset",
-      "Conversion-driven campaigns",
-      "Measurable outcomes",
-    ],
+    description: "We create meaningful digital experiences powered by creativity.",
+    points: ["Brand-first mindset", "Conversion-driven campaigns", "Measurable outcomes"],
     images: [
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
       "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
@@ -43,7 +37,6 @@ const cards = [
   {
     id: 3,
     tag: "Growth Marketing",
-    align: "right",
     title: "Scaling Businesses With Smart Execution",
     description: "Our performance-driven model ensures long-term growth.",
     points: ["Data-backed decisions", "Omnichannel presence", "High ROI focus"],
@@ -56,132 +49,129 @@ const cards = [
 ];
 
 export default function StackCards() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const sections = document.querySelectorAll(".stack-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setActiveIndex(index);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section
-      className="relative bg-[#f4f6fb]"
-      style={{ height: `${cards.length * 100}vh` }} // 🔥 Important for stacking
-    >
+    <section className="relative bg-[#f4f6fb]">
       {cards.map((card, index) => (
         <div
           key={card.id}
-          className="sticky top-0 h-screen flex items-center justify-center"
+          data-index={index}
           style={{ zIndex: index + 1 }}
+          className={`
+            stack-card
+            w-full
+            ${/* Sticky + full-screen only on lg */ ""}
+            lg:sticky lg:top-0 lg:h-screen
+            flex items-center justify-center
+            py-12 lg:py-0
+          `}
         >
           <div className="max-w-7xl w-full px-6 lg:px-12">
-            {/* Folder Style Card */}
-            {/* Folder Tab (Top CTA Same Style) */}
-            {/* <div className="absolute -top-6 left-12">
-                <div className="px-6 py-3 bg-white border-2 border-blue-500 border-b-0 rounded-t-[25px] text-blue-600 text-sm font-medium shadow-sm">
-                  {card.tag} ↗
-                </div>
-              </div> */}
-            <div className="relative clip-card bg-white rounded-[45px] border-2 border-blue-500 shadow-xl overflow-visible">
-              {/* Inner safe area */}
-              <div className="relative pr-16">
-                {/* Folder Clip CTA Container */}
-
-                <div className="absolute top-0 right-0 w-[280px] h-[120px] clip-cta flex items-start z-10">
+            {/* Sticky Tabs on Desktop */}
+            <div className="hidden lg:block absolute w-[30%] right-80 top-40 z-50 pointer-events-none">
+              <div className="relative max-w-7xl mx-auto h-16">
+                {cards.map((c, i) => (
                   <div
+                    key={c.id}
                     className={`
-    absolute -top-6 z-20
-    ${
-      card.align === "left"
-        ? "left-12"
-        : card.align === "center"
-          ? "left-1/2 -translate-x-1/2"
-          : "right-12"
-    }
-  `}
+                      absolute top-0
+                      ${i === 0 ? "left-0" : i === 1 ? "left-1/2 -translate-x-1/2" : "right-0"}
+                      px-8 py-3 rounded-full border-2 text-sm font-medium
+                      transition-all duration-500
+                      ${i > activeIndex
+                        ? "opacity-0 pointer-events-none"
+                        : i === activeIndex
+                        ? "bg-blue-600 border-blue-600 text-white opacity-100"
+                        : "bg-transparent border-blue-600 text-blue-600 opacity-100"}
+                    `}
                   >
-                    <div className="px-6 py-3 bg-white border-2 border-blue-500 border-b-0 rounded-t-full text-blue-600 text-sm font-medium shadow-md">
-                      {card.tag} ↗
-                    </div>
+                    {c.tag}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative clip-card bg-white rounded-[45px] border-2 border-blue-500 shadow-xl overflow-visible pt-16">
+              {/* Glow Effect */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-[-120px] right-[-120px] w-[400px] h-[400px] bg-blue-500/20 blur-[120px] rounded-full" />
+              </div>
+
+              <div className="p-6 md:p-16 grid md:grid-cols-2 gap-12 items-center relative z-10">
+                {/* LEFT IMAGES */}
+                <div className="relative flex justify-center mb-8 lg:mb-0">
+                  <div className="relative w-[280px] h-[280px] md:w-[420px] md:h-[420px]">
+                    {card.images.map((img, i) => {
+                      const positions = [
+                        "absolute top-0 left-0 w-40 h-40 md:w-60 md:h-60",
+                        "absolute bottom-0 left-10 w-40 h-40 md:w-60 md:h-60",
+                        "absolute top-10 right-0 w-48 h-48 md:w-72 md:h-72",
+                      ];
+                      return (
+                        <div
+                          key={i}
+                          className={`rounded-full overflow-hidden ${positions[i]}`}
+                        >
+                          <Image src={img} alt="" fill className="object-cover" />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-                <div className="absolute top-0 right-0 w-full h-full pointer-events-none"></div>
 
-                {/* <div
-                className={`absolute -top-6 ${
-                  card.align === "left"
-                    ? "left-12"
-                    : card.align === "center"
-                      ? "left-1/2 -translate-x-1/2"
-                      : "right-12"
-                }`}
-              >
-                <span className="px-6 py-3 bg-white border-2 border-blue-500 border-b-0 rounded-t-[25px] text-blue-600 text-sm font-medium shadow-sm">
-                  {card.tag} ↗
-                </span>
-              </div> */}
-
-                {/* Radial Glow */}
-                <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute top-[-120px] right-[-120px] w-[400px] h-[400px] bg-blue-500/20 blur-[120px] rounded-full" />
-                </div>
-
-                <div className="p-6 md:p-16 grid md:grid-cols-2 gap-12 items-center relative z-10">
-                  {/* LEFT IMAGES */}
-                  <div className="relative flex justify-center">
-                    <div className="relative w-[280px] h-[280px] md:w-[420px] md:h-[420px]">
-                      <div className="absolute top-0 left-0 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden">
-                        <Image
-                          src={card.images[0]}
-                          alt=""
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-
-                      <div className="absolute bottom-0 left-10 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden">
-                        <Image
-                          src={card.images[1]}
-                          alt=""
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-
-                      <div className="absolute top-10 right-0 w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden">
-                        <Image
-                          src={card.images[2]}
-                          alt=""
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* RIGHT CONTENT */}
-                  <div>
-                    <span className="text-blue-600 text-sm font-medium">
-                      ABOUT US
+                {/* RIGHT CONTENT */}
+                <div>
+                  <div className="relative pl-10 inline-block">
+                    <span className="text-blue-600 text-sm font-semibold uppercase">
+                      {card.tag}
                     </span>
 
-                    <h2 className="text-3xl md:text-5xl font-bold mt-4 leading-tight">
-                      {card.title}
-                    </h2>
+                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-5 h-3 border-2 border-blue-600 rounded-full"></span>
 
-                    <p className="text-gray-600 mt-6 leading-relaxed">
-                      {card.description}
-                    </p>
-
-                    <ul className="mt-6 space-y-3 text-gray-700">
-                      {card.points.map((point, i) => (
-                        <li key={i} className="flex gap-2">
-                          <span className="w-2 h-2 bg-blue-600 rounded-full mt-2" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <Link
-                      href="#"
-                      className="inline-flex mt-8 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium"
-                    >
-                      Know More ↗
-                    </Link>
+                    <span className="absolute left-1 top-1/2 -translate-y-1/2 w-5 h-3 bg-gradient-to-r from-blue-600 to-black rounded-full"></span>
                   </div>
+                  <h2 className="text-3xl md:text-5xl font-bold mt-4 leading-tight">
+                    {card.title}
+                  </h2>
+
+                  <p className="text-gray-600 mt-6 leading-relaxed">{card.description}</p>
+
+                  <ul className="mt-6 space-y-3 text-gray-700">
+                    {card.points.map((point, i) => (
+                      <li key={i} className="flex gap-2">
+                        <span className="w-2 h-2 bg-blue-600 rounded-full mt-2" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    href="#"
+                    className="inline-flex mt-8 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium"
+                  >
+                    Know More ↗
+                  </Link>
                 </div>
               </div>
             </div>
