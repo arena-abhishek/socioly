@@ -116,6 +116,12 @@
   );
 }
 
+@media (max-width: 1023px) {
+  .clip-card {
+    clip-path: none;
+  }
+}
+
 @layer utilities {
   .services-vector {
     @apply absolute aspect-square rounded-[10px] border shadow-2xl;

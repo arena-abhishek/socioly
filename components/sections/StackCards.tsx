@@ -181,6 +181,87 @@ export default function StackCards() {
     </section>
   );
 }
+/*    <section className="relative bg-[#f4f6fb] lg:h-[300vh]">
+{cards.map((card, index) => (
+<div
+  key={card.id}
+  data-index={index}
+  style={{ zIndex: cards.length - index }}
+  className="stack-card w-full lg:sticky lg:top-0 lg:h-screen flex items-center justify-center py-12 lg:py-0"
+>
+  <div className="max-w-[90vw] md:max-w-7xl w-full px-4 md:px-12">
+    
+    <div className="relative bg-white border-2 border-blue-500 shadow-xl rounded-[20px] md:rounded-[45px] overflow-hidden pt-4 md:pt-16">
+
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[-120px] right-[-120px] w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-blue-500/20 blur-[120px] rounded-full" />
+      </div>
+
+      <div className="p-4 md:p-16 grid md:grid-cols-2 gap-6 md:gap-12 items-center relative z-10">
+       
+        <div className="relative flex justify-center mb-6 md:mb-0">
+          <div className="relative w-[200px] sm:w-[280px] md:w-[420px] h-[200px] sm:h-[280px] md:h-[420px]">
+            {card.images.map((img, i) => {
+              const positions = [
+                "absolute top-0 left-0 w-1/3 sm:w-40 md:w-60 h-1/3 sm:h-40 md:h-60",
+                "absolute bottom-0 left-2 w-1/3 sm:w-40 md:w-60 h-1/3 sm:h-40 md:h-60",
+                "absolute top-2 right-0 w-1/2 sm:w-48 md:w-72 h-1/2 sm:h-48 md:h-72",
+              ];
+              return (
+                <div key={i} className={`rounded-full overflow-hidden ${positions[i]}`}>
+                  <Image src={img} alt="" fill className="object-cover" />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        
+        <div>
+          <div className="relative pl-4 md:pl-10 inline-block">
+            <span className="text-blue-600 text-xs sm:text-sm font-semibold uppercase">
+              {card.tag}
+            </span>
+
+            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-2 border-2 border-blue-600 rounded-full"></span>
+
+            <span className="absolute left-1 top-1/2 -translate-y-1/2 w-3 h-2 bg-gradient-to-r from-blue-600 to-black rounded-full"></span>
+          </div>
+
+          <h2 className="text-xl sm:text-2xl md:text-5xl font-bold mt-4 leading-tight">
+            {card.title}
+          </h2>
+
+          <p className="text-gray-600 mt-4 sm:mt-6 leading-relaxed text-sm sm:text-base md:text-lg">
+            {card.description}
+          </p>
+
+          <ul className="mt-4 sm:mt-6 space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+            {card.points.map((point, i) => (
+              <li key={i} className="flex gap-2 items-start">
+                <span className="w-2 h-2 bg-blue-600 rounded-full mt-1" />
+                {point}
+              </li>
+            ))}
+          </ul>
+
+          <Link
+            href="#"
+            className="inline-flex mt-4 sm:mt-8 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium text-sm sm:text-base"
+          >
+            Know More ↗
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+))}
+</section> */
+
+
+
+
 //  version with framer motion scroll effects, not used in the end but kept for reference
 /* "use client";
 

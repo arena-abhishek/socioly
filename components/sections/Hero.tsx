@@ -57,6 +57,8 @@ export default function Banner() {
         className="
         relative overflow-hidden text-white text-center
         px-4
+         h-screen        
+         md:min-h-screen
         pt-[clamp(120px,10.5vw,200px)]
         pb-[clamp(130px,26vw,513px)]
         bg-gradient-to-r from-indigo-600 to-purple-700"
