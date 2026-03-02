@@ -37,7 +37,7 @@ export default function Clients() {
                     alt={client.name}
                     width={120}
                     height={60}
-                    className="object-contain brightness-0 invert opacity-90 hover:opacity-100 transition"
+                    className="object-contain  opacity-90 hover:opacity-100 transition"
                   />
                 </div>
               ))}

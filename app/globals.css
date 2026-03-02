@@ -57,7 +57,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 20s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
@@ -76,15 +76,15 @@
 }
 
 .animate-marquee {
-  animation: marquee 25s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .animate-marquee-reverse {
-  animation: marqueeReverse 30s linear infinite;
+  animation: marqueeReverse 10s linear infinite;
 }
 
 .animate-wave {
-  animation: waveMove 20s linear infinite;
+  animation: waveMove 10s linear infinite;
 }
 
 /* globals.css ya component css */

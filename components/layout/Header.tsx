@@ -42,8 +42,9 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/assets/img/2.png"
-              alt="Socioly Logo"
+              src="https://exato.ai/Exato-Logo.png"
+              // src="/assets/img/2.png"
+              alt="Exato.ai Logo"
               width={120}
               height={40}
               priority

@@ -60,7 +60,8 @@ export default function AboutPage() {
               </div>
               <div className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
                 <Image
-                  src="https://picsum.photos/seed/socioly-about/800/800"
+                  // src="https://picsum.photos/seed/socioly-about/800/800"
+                  src="https://exato.ai/Screenshot%202023-11-05%20at%2012.19.38%20PM.png"
                   alt="Our Team at Work"
                   fill
                   className="object-cover"

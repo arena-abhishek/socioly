@@ -12,7 +12,7 @@ export default function TeamCard({ member }) {
     <div
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      className="relative h-[420px] rounded-3xl overflow-hidden cursor-pointer group"
+      className="relative h-[320px] rounded-3xl overflow-hidden cursor-pointer group"
     >
       {/* Gradient Border on Hover */}
       <div

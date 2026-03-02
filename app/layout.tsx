@@ -15,28 +15,28 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.APP_URL || "http://localhost:3000"),
   title: {
-    default: "Socioly | Digital Marketing & Social Growth",
-    template: "%s | Socioly",
+    default: "Exato.ai",
+    template: "%s | Exato Ai",
   },
   description: "Elevate your brand with Socioly's expert digital marketing and social media strategies.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Socioly",
+    siteName: "Exato.ai",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Socioly Digital Marketing",
+        alt: "Exato.ai Digital Marketing",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@socioly",
-    creator: "@socioly",
+    site: "@exatoai",
+    creator: "@exatoai",
   },
   robots: {
     index: true,
@@ -59,7 +59,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
-        <main id="main-content" className="flex-grow">
+        <main id="main-content" className="grow">
           {children}
         </main>
         <Footer />

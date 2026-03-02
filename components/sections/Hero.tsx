@@ -5,14 +5,18 @@ import Slider from "@/components/ui/Slider";
 import Stat from "@/components/ui/Stat";
 import { PlayButton } from "@/components/ui/PlayButton";
 import VideoModal from "@/components/ui/VideoModal";
+import dynamic from "next/dynamic";
 
 export default function Banner() {
+  const Slider = dynamic(() => import("@/components/ui/Slider"), { ssr: false });
   const [open, setOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+   if (!isClient) return null;
 
   // const images = [
   //   "https://images.unsplash.com/photo-1581091012184-0ffcd2bbba34?auto=format&fit=crop&w=800&q=80", // office desk
@@ -68,7 +72,7 @@ export default function Banner() {
           py-[clamp(6px,0.47vw,9px)]
           font-bold mb-[clamp(7px,0.63vw,12px)]"
           >
-            Empowering Your Business with Data-Driven Marketing
+            Next-Gen Engagement
           </span>
 
           <h1
@@ -79,7 +83,7 @@ export default function Banner() {
             mb-[clamp(8px,0.84vw,16px)]
           "
           >
-            Empowering Your Business with Data-Driven Marketing
+           Evolving Customer Journeys: Better Customer Experience
           </h1>
 
           <a
@@ -93,7 +97,7 @@ export default function Banner() {
             font-bold
             hover:bg-indigo-600 hover:text-white transition"
           >
-            Our Services ↗
+           Talk To CX Expert ↗
           </a>
         </div>
 
