@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-// import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -50,20 +50,36 @@ export default function ServicesSection() {
   const [services, setServices] = useState(fallbackServices);
   const swiperRef = useRef(null);
 
-  useEffect(() => {
-    const fetchServices = async () => {
-      const { data } = await supabase
+useEffect(() => {
+  const fetchServices = async () => {
+    const supabase = getSupabase(); // ← Initialize the client
+
+    if (!supabase || !supabase.from) {
+      console.warn("Supabase client not initialized, using fallback services");
+      return;
+    }
+
+    try {
+      const { data, error } = await supabase
         .from("services")
         .select("*")
         .order("order_no", { ascending: true });
 
+      if (error) {
+        console.warn("Error fetching services:", error.message);
+        return;
+      }
+
       if (data && data.length > 0) {
         setServices(data);
       }
-    };
+    } catch (err) {
+      console.error("Unexpected error fetching services:", err);
+    }
+  };
 
-    fetchServices();
-  }, []);
+  fetchServices();
+}, []);
 
   return (
     <section className="relative py-24 bg-gray-50 overflow-hidden">

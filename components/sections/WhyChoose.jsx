@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import { supabase } from "@/lib/supabase.ts";
+import { getSupabase } from "@/lib/supabase"; // ✅ use getSupabase
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Play } from "lucide-react";
@@ -38,16 +38,32 @@ export default function WhyChoose() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data: supaData } = await supabase
-        .from("why_choose")
-        .select("*")
-        .single();
+      const supabase = getSupabase(); // ✅ Supabase client
 
-      if (supaData) {
-        setData({
-          ...supaData,
-          points: supaData.points || fallbackData.points,
-        });
+      if (!supabase || !supabase.from) {
+        console.warn("Supabase client not initialized, using fallback data");
+        return;
+      }
+
+      try {
+        const { data: supaData, error } = await supabase
+          .from("why_choose")
+          .select("*")
+          .single();
+
+        if (error) {
+          console.warn("Supabase fetch error, using fallback data:", error.message);
+          return;
+        }
+
+        if (supaData) {
+          setData({
+            ...supaData,
+            points: supaData.points || fallbackData.points, // points fallback
+          });
+        }
+      } catch (e) {
+        console.error("Unexpected fetch error, using fallback data:", e);
       }
     };
 
@@ -57,7 +73,6 @@ export default function WhyChoose() {
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-        
         {/* Image Section */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -119,12 +134,8 @@ export default function WhyChoose() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-lg">
-                    {point.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mt-1">
-                    {point.description}
-                  </p>
+                  <h3 className="font-semibold text-lg">{point.title}</h3>
+                  <p className="text-gray-600 text-sm mt-1">{point.description}</p>
                 </div>
               </motion.div>
             ))}
