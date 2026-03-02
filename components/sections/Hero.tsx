@@ -56,12 +56,12 @@ export default function Banner() {
       <section
         className="
         relative overflow-hidden text-white text-center
-        px-4
-         h-screen        
-         md:min-h-screen
-        pt-[clamp(120px,10.5vw,200px)]
-        pb-[clamp(130px,26vw,513px)]
-        bg-gradient-to-r from-indigo-600 to-purple-700"
+    px-4
+    min-h-screen
+    flex flex-col justify-center items-center
+    md:block
+    pt-[clamp(120px,10.5vw,200px)] pb-[clamp(130px,26vw,513px)]
+    bg-gradient-to-r from-indigo-600 to-purple-700"
       >
         {/* Background SVG */}
         <div className="absolute inset-0 -z-10 mix-blend-multiply bg-[url('/assets/img/banner-bg-shape.svg')] bg-cover bg-center" />
