@@ -8,31 +8,30 @@ import { Play } from "lucide-react";
 
 const fallbackData = {
   subtitle: "Why Choose Us",
-  title: "Seeing The Full potential of Your Brand",
+  title: "We Position Ourselves as an Experience Integrator",
   video_url: "https://youtu.be/GGf1JjSAKP4",
   image_url: "/why-choose-us-img.png",
   points: [
     {
-      title: "Quality Result",
+      title: "Cutting-Edge Technology",
       description:
-        "There are many variations of passages of Digital Lorem Ipsum available.",
-      icon: "quality",
+        "Our solutions are powered by advanced LLM models, Generative AI, and NLP engines, ensuring conversations are context-aware and natural.",
+      icon: "technology",
     },
     {
-      title: "Best Team Members",
+      title: "Industry-Focused Approach",
       description:
-        "There are many variations of passages available.",
-      icon: "team",
+        "We provide consulting-led solutions tailored to sectors like BFSI, Healthcare, Retail, and Telecom.",
+      icon: "industry",
     },
     {
-      title: "High Success Rate",
+      title: "Proven Scale & Global Presence",
       description:
-        "Majority have suffered alteration in some form.",
-      icon: "success",
+        "Serving 150+ enterprise customers across USA, Singapore, and India, managing over 100,000 agent licenses globally.",
+      icon: "global",
     },
   ],
 };
-
 export default function WhyChoose() {
   const [data, setData] = useState(fallbackData);
 
@@ -83,7 +82,8 @@ export default function WhyChoose() {
         >
           <div className="relative rounded-[40px] overflow-hidden shadow-xl">
             <Image
-              src={data.image_url}
+              // src={data.image_url}
+               src="https://images.unsplash.com/photo-1581091870622-fca4dc3d3c27?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800"
               alt="Why Choose Us"
               width={600}
               height={600}

@@ -37,21 +37,29 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                  We're on a mission to{" "}
-                  <span className="text-indigo-600">humanize</span> digital
-                  growth.
+                  Empowering Enterprises with{" "}
+                  <span className="text-indigo-600">
+                    AI-Driven CXaaS Solutions
+                  </span>
+                  .
                 </h1>
+
                 <p className="text-xl text-slate-600 leading-relaxed">
-                  Founded in 2016, Socioly started with a simple idea: that
-                  digital marketing should be about more than just clicks—it
-                  should be about building lasting connections between brands
-                  and people.
+                  At Exato.ai, we don’t just provide technology; we are
+                  Experience Integrators. We bridge the gap between fragmented
+                  data and meaningful human connection. By fusing cutting-edge
+                  Generative AI with strategic cloud consulting, we transform
+                  traditional contact centers into high-performance engines of
+                  growth.
                 </p>
+
                 <p className="text-lg text-slate-600">
-                  Today, we're a full-service agency helping ambitious companies
-                  navigate the complex digital landscape through data-backed
-                  strategies and world-class creative.
+                  From our roots as a boutique analytics firm to our global
+                  presence as a publicly listed leader, we help over 150+
+                  enterprise clients deliver seamless, context-aware experiences
+                  that drive loyalty and measurable ROI.
                 </p>
+
                 <div className="flex gap-4">
                   <Button size="lg" asChild>
                     <Link href="/contact">Work With Us</Link>
@@ -74,7 +82,6 @@ export default function AboutPage() {
         <WorkProcess />
 
         <CompanyHistory />
-
 
         {stats && (
           <section className="bg-slate-900 py-24 text-white">

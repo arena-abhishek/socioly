@@ -1,8 +1,8 @@
 export const contactContent = {
-  address: "2715 Ash Dr. San Jose, South Dakota 83475",
-  emails: ["info@ticstube.com", "contact@ticstube.com"],
+  address: "Exato Technologies Limited.A-33, 2nd Floor, Sector-02,Noida, Uttar Pradesh, 201301",
+  emails: ["cx@exato.ai"],
   hours: [
-    "Sunday–Fri: 9 AM – 6 PM",
+    "Sunday–Friday: 9 AM – 6 PM",
     "Saturday: 9 AM – 4 PM",
   ],
   mapEmbed:

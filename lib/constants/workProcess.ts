@@ -1,23 +1,23 @@
 export const workProcessData = [
   {
     id: 1,
-    title: "Define Requirements",
+    title: "Assess & Strategize",
     description:
-      "In a free hour, when our power of choice is untrammelled and when nothing prevents dolor sit amet, consectetur.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+      "We analyze your customer journey and tech stack to build a custom AI blueprint aligned with your KPIs.",
+   image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
   },
   {
     id: 2,
-    title: "Design & Prototyping",
+    title: "Deploy & Integrate",
     description:
-      "In a free hour, when our power of choice is untrammelled and when nothing prevents dolor sit amet, consectetur.",
+      "Our team embeds Generative AI solutions directly into your CRM and workflows for a seamless Day 1 launch.",
     image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
   },
   {
     id: 3,
-    title: "Final Solution",
+    title: "Optimize & Scale",
     description:
-      "In a free hour, when our power of choice is untrammelled and when nothing prevents dolor sit amet, consectetur.",
+      "Through continuous NLP training and real-time analytics, we refine AI performance for improved ROI and customer satisfaction.",
     image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
   },
 ];

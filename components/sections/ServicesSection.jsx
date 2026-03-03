@@ -12,74 +12,102 @@ import "swiper/css";
 
 const fallbackServices = [
   {
-    tag: "Digital Security",
-    title: "Data Guard Sentinel",
+    tag: "CX as a Service",
+    title: "Cloud Contact Center Solutions",
     description:
-      "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services.",
-    image_url: "/service1.png",
+      "Transform your customer interactions into growth opportunities with our Cloud Contact Center solutions.",
+    image_url:
+      "https://images.unsplash.com/photo-1591696331119-6c4704bff4da?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
     gradient_from: "from-fuchsia-600",
     gradient_to: "to-orange-400",
   },
   {
-    tag: "Digital Shop",
-    title: "Woo commerce",
-    description: "Collaboratively formulate principle capital.",
-    image_url: "/service2.png",
+    tag: "Conversational AI",
+    title: "AI-Powered Conversations",
+    description:
+      "Empower your business with cutting-edge Conversational AI solutions curated from platforms like Kore.AI, Yellow.AI, Google CCAI, Amazon, Microsoft, and more.",
+    image_url:
+      "https://images.unsplash.com/photo-1581091012184-928b8d44b92c?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
     gradient_from: "from-blue-600",
     gradient_to: "to-purple-500",
   },
   {
-    tag: "CRM solutions",
-    title: "CRM Solutions",
-    description: "Progressively evolve user revolutionary hosting services.",
-    image_url: "/service3.png",
+    tag: "Automation as a Service",
+    title: "Efficiency & Agility",
+    description:
+      "At Exato, we are the Automation Accelerator, driving organizations towards unprecedented efficiency and agility.",
+    image_url:
+      "https://images.unsplash.com/photo-1556761175-129418cb2dfe?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
     gradient_from: "from-purple-600",
     gradient_to: "to-pink-500",
   },
   {
-    tag: "Web Design",
-    title: "Web Design",
-    description: "Collaboratively formulate principle capital.",
-    image_url: "/service4.png",
+    tag: "Unified Communications",
+    title: "Enterprise Communication Solutions",
+    description:
+      "Delivers integrated technology solutions for secure, scalable, and efficient enterprise communication and IT infrastructure management.",
+    image_url:
+      "https://images.unsplash.com/photo-1581090700220-5a2be0c76c3d?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
     gradient_from: "from-indigo-600",
     gradient_to: "to-purple-600",
   },
+  {
+    tag: "Exato IQ",
+    title: "Seamless System Integrations",
+    description:
+      "We create technological bridges, like CTI connections and WFM connectors, enabling software and phone systems to communicate seamlessly.",
+    image_url:
+      "https://images.unsplash.com/photo-1581091215367-2a8b12d074f3?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
+    gradient_from: "from-green-600",
+    gradient_to: "to-teal-500",
+  },
+  {
+    tag: "Cloud ERP",
+    title: "Modern ERP & CRM Solutions",
+    description:
+      "Built using world-class cloud and mobile technology, Acumatica’s applications deliver adaptable and integrated ERP and CRM solutions.",
+    image_url:
+      "https://images.unsplash.com/photo-1555421689-2d2c6f08333f?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
+    gradient_from: "from-yellow-600",
+    gradient_to: "to-orange-500",
+  },
 ];
-
 export default function ServicesSection() {
   const [services, setServices] = useState(fallbackServices);
   const swiperRef = useRef(null);
 
-useEffect(() => {
-  const fetchServices = async () => {
-    const supabase = getSupabase(); // ← Initialize the client
+  useEffect(() => {
+    const fetchServices = async () => {
+      const supabase = getSupabase(); // ← Initialize the client
 
-    if (!supabase || !supabase.from) {
-      console.warn("Supabase client not initialized, using fallback services");
-      return;
-    }
-
-    try {
-      const { data, error } = await supabase
-        .from("services")
-        .select("*")
-        .order("order_no", { ascending: true });
-
-      if (error) {
-        console.warn("Error fetching services:", error.message);
+      if (!supabase || !supabase.from) {
+        console.warn(
+          "Supabase client not initialized, using fallback services",
+        );
         return;
       }
 
-      if (data && data.length > 0) {
-        setServices(data);
-      }
-    } catch (err) {
-      console.error("Unexpected error fetching services:", err);
-    }
-  };
+      try {
+        const { data, error } = await supabase
+          .from("services")
+          .select("*")
+          .order("order_no", { ascending: true });
 
-  fetchServices();
-}, []);
+        if (error) {
+          console.warn("Error fetching services:", error.message);
+          return;
+        }
+
+        if (data && data.length > 0) {
+          setServices(data);
+        }
+      } catch (err) {
+        console.error("Unexpected error fetching services:", err);
+      }
+    };
+
+    fetchServices();
+  }, []);
 
   return (
     <section className="relative py-24 bg-gray-50 overflow-hidden">
@@ -139,7 +167,7 @@ useEffect(() => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative overflow-hidden rounded-3xl p-8 text-white 
+                className={`relative overflow-hidden rounded-3xl p-6 text-white 
 bg-gradient-to-br ${service.gradient_from} ${service.gradient_to} 
 flex flex-col justify-between h-[520px]`}
               >
@@ -159,13 +187,14 @@ flex flex-col justify-between h-[520px]`}
                   </button>
                 </div>
 
-                <div className="absolute bottom-0 left-0 w-full">
+                {/* Responsive Image Section */}
+                <div className="w-full mt-4 flex-shrink-0 h-[40%] md:h-[45%] lg:h-[50%] relative ">
                   <Image
                     src={service.image_url}
                     alt={service.title}
-                    width={400}
-                    height={250}
-                    className="w-full object-cover rounded-b-3xl"
+                    fill
+                    className="object-cover rounded-2xl"
+                    priority
                   />
                 </div>
               </motion.div>

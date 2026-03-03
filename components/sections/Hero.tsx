@@ -24,7 +24,23 @@ export default function Banner() {
   //   "https://images.unsplash.com/photo-1581090700227-7d5e0c2fa78b?auto=format&fit=crop&w=800&q=80", // office teamwork
   //   "https://images.unsplash.com/photo-1593642632559-0c9b53aefb7e?auto=format&fit=crop&w=800&q=80", // workspace
   // ];
-  const slider1Images = [
+
+  const images = [
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80", // office team meeting
+  "https://plus.unsplash.com/premium_photo-1684249781401-56992dda152d?auto=format&fit=crop&w=800&q=80", // premium office workspace
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80", // group working on laptops
+  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80", // woman using laptop
+];
+
+const rotateArray = (arr, count) => {
+  return arr.slice(count).concat(arr.slice(0, count));
+};
+
+const slider1Images = rotateArray(images, 0);
+const slider2Images = rotateArray(images, 1);
+const slider3Images = rotateArray(images, 2);
+const slider4Images = rotateArray(images, 3);
+  /* const slider1Images = [
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // modern office interior
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // laptop & workspace
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // work desk setup
@@ -50,7 +66,7 @@ export default function Banner() {
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // laptop & workspace
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // work desk setup
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // business workspace
-  ];
+  ]; */
   return (
     <>
       <section

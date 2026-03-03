@@ -7,14 +7,15 @@ import { useEffect, useState } from "react";
 const cards = [
   {
     id: 1,
-    tag: "Problem Solving",
-    title: "Empowering Brands to Thrive in the Digital World",
+    tag: "About Us",
+    title: "Where CX Meets Excellence",
     description:
-      "At Socioly, we blend creativity with strategy to help brands grow faster, smarter, and more effectively through data-driven digital marketing.",
+      "At Exato, we proudly bear the title of 'Experience Integrator.' With a commitment to our mission, we've partnered with over 100 businesses, helping them achieve exceptional CX and EX results. Through innovation, consulting, and technology, we enable tangible business outcomes and lasting success.",
     points: [
-      "Customized marketing campaigns tailored for real impact.",
-      "ROI-focused strategies across every digital channel.",
-      "Consistent growth through innovative marketing solutions.",
+      "Strategic Partnerships",
+      "Innovation-Driven Excellence",
+      "Proven Outcomes",
+      "Dedication to the Future",
     ],
     images: [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
@@ -24,10 +25,15 @@ const cards = [
   },
   {
     id: 2,
-    tag: "Creative Strategy",
-    title: "Innovative Ideas That Drive Real Results",
-    description: "We create meaningful digital experiences powered by creativity.",
-    points: ["Brand-first mindset", "Conversion-driven campaigns", "Measurable outcomes"],
+    tag: "Sectors We Serve",
+    title: "Industry-Focused Technology Solutions",
+    description:
+      "Exato serves key sectors including BFSI, Healthcare, Retail, Telecom, Manufacturing, and IT/ITeS & BPO/KPO, delivering solutions that address specific business challenges with measurable impact.",
+    points: [
+      "Retail: AI-driven product recommendations, inventory & demand forecasting, loyalty analytics",
+      "Telecom: Customer churn prediction, workforce management, omnichannel CX deployment",
+      "Manufacturing: Supply chain optimization, AI contract management, predictive revenue & SKU models",
+    ],
     images: [
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
       "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
@@ -36,10 +42,15 @@ const cards = [
   },
   {
     id: 3,
-    tag: "Growth Marketing",
-    title: "Scaling Businesses With Smart Execution",
-    description: "Our performance-driven model ensures long-term growth.",
-    points: ["Data-backed decisions", "Omnichannel presence", "High ROI focus"],
+    tag: "Our Vision",
+    title: "Engage. Understand. Innovate: The AI-Powered Conversation Revolution",
+    description:
+      "Leveraging LLM models, Generative AI, and NLP engines, we craft conversations that don't just respond, but truly understand and engage. Trust in a solution where technology meets human intuition.",
+    points: [
+      "Next-Gen Conversations: Global Adaptability, Context-Aware",
+      "Mending the Fragmented Landscape: Bridging CX and EX Gaps",
+      "Empowering Your Business: Tangible Outcomes with Our Solutions",
+    ],
     images: [
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
       "https://images.unsplash.com/photo-1507679799987-c73779587ccf",
@@ -47,7 +58,6 @@ const cards = [
     ],
   },
 ];
-
 export default function StackCards() {
   const [activeIndex, setActiveIndex] = useState(0);
 
