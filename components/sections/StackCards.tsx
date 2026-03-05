@@ -43,7 +43,8 @@ const cards = [
   {
     id: 3,
     tag: "Our Vision",
-    title: "Engage. Understand. Innovate: The AI-Powered Conversation Revolution",
+    title:
+      "Engage. Understand. Innovate: The AI-Powered Conversation Revolution",
     description:
       "Leveraging LLM models, Generative AI, and NLP engines, we craft conversations that don't just respond, but truly understand and engage. Trust in a solution where technology meets human intuition.",
     points: [
@@ -63,44 +64,51 @@ export default function StackCards() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const sections = document.querySelectorAll(".stack-card");
+    if (window.innerWidth < 1024) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.getAttribute("data-index"));
-            setActiveIndex(index);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
+    const handleScroll = () => {
+      const cards = document.querySelectorAll(".stack-card");
 
-    sections.forEach((sec) => observer.observe(sec));
-    return () => observer.disconnect();
+      cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        const progress = Math.min(
+          Math.max(1 - rect.top / window.innerHeight, 0),
+          1,
+        );
+
+        const scale = 1 - i * 0.05 + progress * 0.05;
+
+        (card as HTMLElement).style.transform = `scale(${scale})`;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section className="relative bg-[#f4f6fb]">
+    <section
+      className="relative bg-[#f4f6fb] hidden lg:block"
+      style={{ height: `${cards.length * 120}vh` }}
+    >
       {cards.map((card, index) => (
         <div
           key={card.id}
           data-index={index}
           style={{ zIndex: index + 1 }}
           className={`
-            stack-card
-            w-full
-            ${/* Sticky + full-screen only on lg */ ""}
-            lg:sticky lg:top-0 lg:h-screen
-            flex items-center justify-center
-            py-12 lg:py-0
-          `}
+  stack-card
+  w-full
+  lg:sticky lg:top-0 lg:h-screen lg:flex
+  items-center justify-center
+  py-12 lg:py-0
+`}
         >
           <div className="max-w-7xl w-full px-6 lg:px-12">
-            {/* Sticky Tabs on Desktop */}
-          {/*   <div className="hidden lg:block absolute w-[30%] right-65 top-22 z-50 pointer-events-none">
-              <div className="relative max-w-7xl mx-auto h-16">
+            <div className="hidden lg:block absolute w-[30%] right-65 top-22 z-50 pointer-events-none">
+              {/*  <div className="relative max-w-7xl mx-auto h-16">
                 {cards.map((c, i) => (
                   <div
                     key={c.id}
@@ -119,11 +127,10 @@ export default function StackCards() {
                     {c.tag}
                   </div>
                 ))}
-              </div>
-            </div> */}
+              </div> */}
+            </div>
 
             <div className="relative clip-card bg-white rounded-[45px] border-2 border-blue-500 shadow-xl overflow-visible pt-16">
-              {/* Glow Effect */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-[-120px] right-[-120px] w-[400px] h-[400px] bg-blue-500/20 blur-[120px] rounded-full" />
               </div>
@@ -143,7 +150,12 @@ export default function StackCards() {
                           key={i}
                           className={`rounded-full overflow-hidden ${positions[i]}`}
                         >
-                          <Image src={img} alt="" fill className="object-cover" />
+                          <Image
+                            src={img}
+                            alt=""
+                            fill
+                            className="object-cover"
+                          />
                         </div>
                       );
                     })}
@@ -165,7 +177,9 @@ export default function StackCards() {
                     {card.title}
                   </h2>
 
-                  <p className="text-gray-600 mt-6 leading-relaxed">{card.description}</p>
+                  <p className="text-gray-600 mt-6 leading-relaxed">
+                    {card.description}
+                  </p>
 
                   <ul className="mt-6 space-y-3 text-gray-700">
                     {card.points.map((point, i) => (
@@ -191,6 +205,7 @@ export default function StackCards() {
     </section>
   );
 }
+
 /*    <section className="relative bg-[#f4f6fb] lg:h-[300vh]">
 {cards.map((card, index) => (
 <div
@@ -268,9 +283,6 @@ export default function StackCards() {
 </div>
 ))}
 </section> */
-
-
-
 
 //  version with framer motion scroll effects, not used in the end but kept for reference
 /* "use client";

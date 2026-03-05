@@ -122,6 +122,18 @@
   }
 }
 
+.about-card {
+  transition: transform 0.4s ease;
+}
+
+.about-card:nth-child(2) {
+  transform: scale(0.97);
+}
+
+.about-card:nth-child(3) {
+  transform: scale(0.94);
+}
+
 @layer utilities {
   .services-vector {
     @apply absolute aspect-square rounded-[10px] border shadow-2xl;
