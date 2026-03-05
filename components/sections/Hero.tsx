@@ -189,14 +189,14 @@ const slider4Images = rotateArray(images, 3);
         >
           <div
             className="  grid grid-cols-2
-  gap-y-8 gap-x-10
+  gap-y-7 gap-x-10
   text-left
-  md:flex md:items-center md:gap-10"
+  md:flex md:items-center md:gap-7"
           >
             {/* Stats */}
-            <Stat number={20500} label="Projects Done" />
-            <Stat number={100500} label="Happy Clients" />
-            <Stat number={150500} label="Team Members" />
+            <Stat number={100000} label="Agents Enabled" suffix="+" />
+            <Stat number={100} label="Business Transformed" />
+            <Stat number={97} label="Customer Retention" suffix="%" />
 
             {/* Play Reel */}
             <div

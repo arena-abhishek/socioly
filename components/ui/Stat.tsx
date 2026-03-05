@@ -1,6 +1,6 @@
 import CountUp from "react-countup";
 
-export default function Stat({ number, label }) {
+export default function Stat({ number, label, suffix = "" }) {
   return (
     <div
       className="
@@ -11,7 +11,7 @@ export default function Stat({ number, label }) {
       "
     >
       <span className="block text-[clamp(1.4rem,4vw,1.8rem)] font-bold leading-none">
-        <CountUp end={number} duration={3} separator="," />
+        <CountUp end={number} duration={3} separator="," suffix={suffix} />
       </span>
 
       <span className="text-sm text-white/60 mt-1 block">
