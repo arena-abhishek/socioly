@@ -172,6 +172,8 @@ const slider4Images = rotateArray(images, 3);
     max-xl:justify-center
     max-xl:py-[30px]
     px-4
+    pb-0
+[@media(min-height:480px)_and_(max-height:768px)]:pb-[150px]
   "
         >
           <div
