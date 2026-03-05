@@ -11,9 +11,20 @@ import "swiper/css/navigation";
 
 export default function ReviewContactSection() {
   return (
-    <section className="relative py-14 md:py-20 lg:py-28 bg-[#f6f7fb] overflow-hidden">
+    <section className="relative py-14 md:py-20 lg:py-28  overflow-hidden">
 
       {/* ================= DESKTOP BACKGROUND ================= */}
+
+  {/* FULL SECTION BACKGROUND */}
+  <div className="absolute inset-0 ">
+    <Image
+      src="/images/testimonials-bg.png"
+      alt="Section Background"
+      fill
+      className="object-cover"
+      priority
+    />
+  </div>
 
       {/* Left Full Image */}
       <div className="absolute left-0 top-0 bottom-0 w-[38%] hidden lg:block">

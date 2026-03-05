@@ -25,8 +25,9 @@ export default async function HomePage() {
   const featuredServices = services.slice(0, 4);
 
   return (
-    <div className="space-y-24 pb-24 overflow-x-hidden">
-      {/* Hero Section */}
+    // <div className="space-y-24 pb-24 overflow-x-hidden">
+    <div className="  overflow-x-hidden">
+    {/* Hero Section */}
       <Hero />
 
       {/* <section className="relative h-[80vh] flex items-center overflow-hidden bg-slate-900 text-white">
@@ -63,11 +64,11 @@ export default async function HomePage() {
 
       <StackCards />
       <ServicesSection />
+      <Clients/>
       <WhyChoose />
       <WorkProcess/>
       <FaqSection/>
       <ReviewContactSection />
-      <Clients/>
       {/* <section>
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">

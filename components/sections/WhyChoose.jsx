@@ -10,7 +10,7 @@ const fallbackData = {
   subtitle: "Why Choose Us",
   title: "We Position Ourselves as an Experience Integrator",
   video_url: "https://youtu.be/GGf1JjSAKP4",
-  image_url: "/why-choose-us-img.png",
+  image_url: "/images/why-choose-us.png",
   points: [
     {
       title: "Cutting-Edge Technology",
@@ -70,7 +70,17 @@ export default function WhyChoose() {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+    <Image
+      src="/images/why-choose-us-bg.png"   // 👈 your background image
+      alt="background"
+      fill
+      quality={100}
+      className="object-cover object-center "
+      priority
+    />
+  </div>
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
         {/* Image Section */}
         <motion.div
@@ -80,10 +90,10 @@ export default function WhyChoose() {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="relative rounded-[40px] overflow-hidden shadow-xl">
+          <div className="relative rounded-[40px] overflow-hidden ">
             <Image
-              // src={data.image_url}
-               src="https://images.unsplash.com/photo-1581091870622-fca4dc3d3c27?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800"
+              src={data.image_url}
+              //  src="https://images.unsplash.com/photo-1581091870622-fca4dc3d3c27?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800"
               alt="Why Choose Us"
               width={600}
               height={600}

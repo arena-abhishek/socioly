@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function WorkProcess() {
   return (
-    <section className="relative py-20 bg-[#f7f8fc] overflow-hidden">
+    <section className="relative py-20  overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         
         {/* Section Heading */}

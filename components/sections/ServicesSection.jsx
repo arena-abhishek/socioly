@@ -17,7 +17,7 @@ const fallbackServices = [
     description:
       "Transform your customer interactions into growth opportunities with our Cloud Contact Center solutions.",
     image_url:
-      "https://images.unsplash.com/photo-1591696331119-6c4704bff4da?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
+      "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
     gradient_from: "from-fuchsia-600",
     gradient_to: "to-orange-400",
   },
@@ -27,7 +27,7 @@ const fallbackServices = [
     description:
       "Empower your business with cutting-edge Conversational AI solutions curated from platforms like Kore.AI, Yellow.AI, Google CCAI, Amazon, Microsoft, and more.",
     image_url:
-      "https://images.unsplash.com/photo-1581091012184-928b8d44b92c?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
+      "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
     gradient_from: "from-blue-600",
     gradient_to: "to-purple-500",
   },
@@ -37,7 +37,7 @@ const fallbackServices = [
     description:
       "At Exato, we are the Automation Accelerator, driving organizations towards unprecedented efficiency and agility.",
     image_url:
-      "https://images.unsplash.com/photo-1556761175-129418cb2dfe?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
+      "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
     gradient_from: "from-purple-600",
     gradient_to: "to-pink-500",
   },
@@ -47,7 +47,7 @@ const fallbackServices = [
     description:
       "Delivers integrated technology solutions for secure, scalable, and efficient enterprise communication and IT infrastructure management.",
     image_url:
-      "https://images.unsplash.com/photo-1581090700220-5a2be0c76c3d?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
+      "https://plus.unsplash.com/premium_photo-1723291315024-89b911f46471?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     gradient_from: "from-indigo-600",
     gradient_to: "to-purple-600",
   },
@@ -57,7 +57,7 @@ const fallbackServices = [
     description:
       "We create technological bridges, like CTI connections and WFM connectors, enabling software and phone systems to communicate seamlessly.",
     image_url:
-      "https://images.unsplash.com/photo-1581091215367-2a8b12d074f3?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
+      "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
     gradient_from: "from-green-600",
     gradient_to: "to-teal-500",
   },
@@ -110,7 +110,7 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section className="relative py-24 bg-gray-50 overflow-hidden">
+    <section className="relative py-24  overflow-hidden">
       {/* Left Background Vectors */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="services-vector"></div>

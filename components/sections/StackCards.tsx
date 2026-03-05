@@ -99,7 +99,7 @@ export default function StackCards() {
         >
           <div className="max-w-7xl w-full px-6 lg:px-12">
             {/* Sticky Tabs on Desktop */}
-            <div className="hidden lg:block absolute w-[30%] right-80 top-40 z-50 pointer-events-none">
+            <div className="hidden lg:block absolute w-[30%] right-65 top-22 z-50 pointer-events-none">
               <div className="relative max-w-7xl mx-auto h-16">
                 {cards.map((c, i) => (
                   <div

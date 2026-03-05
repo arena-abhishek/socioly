@@ -73,7 +73,7 @@ const slider4Images = rotateArray(images, 3);
         className="
         relative overflow-hidden text-white text-center
     px-4
-    min-h-screen
+    min-h-[100vh] h-auto
     flex flex-col justify-center items-center
     md:block
     pt-[clamp(120px,10.5vw,200px)] pb-[clamp(130px,26vw,513px)]
@@ -126,9 +126,8 @@ const slider4Images = rotateArray(images, 3);
         </div>
 
         <div
-          className="absolute inset-0  md:bottom-0
-    bottom-[-55px] pointer-events-none z-10"
-        >
+          // className="absolute inset-0  md:bottom-0 bottom-[-55px] pointer-events-none z-10">
+          className="absolute inset-0  bottom-0 pointer-events-none z-10">
           {/* Slider 1 */}
           <Slider
             images={slider1Images}
