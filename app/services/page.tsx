@@ -1,6 +1,14 @@
 import { getServices } from "@/lib/fetchers";
 import Container from "@/components/ui/Container";
-import { FaSearch, FaBullhorn, FaChartLine, FaUsers } from "react-icons/fa";
+import { FaSearch, FaBullhorn, FaChartLine } from "react-icons/fa";
+import {
+  FaHeadset,
+  FaRobot,
+  FaCogs,
+  FaUsers,
+  FaNetworkWired,
+  FaCloud,
+} from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -15,45 +23,66 @@ export const metadata: Metadata = {
 };
 export const revalidate = 60;
 
+
+const ICONS = {
+  "cx-as-a-service": <FaHeadset size={24} />,
+  "conversational-ai": <FaRobot size={24} />,
+  "automation-as-a-service": <FaCogs size={24} />,
+  "workforce-management": <FaUsers size={24} />,
+  "unified-communications": <FaNetworkWired size={24} />,
+  "cloud-erp": <FaCloud size={24} />,
+};
+
 const DUMMY_SERVICES = [
   {
     id: "1",
-    icon: <FaSearch size={24} />,
-    title: "Search Engine Optimization",
+    title: "CX as a Service",
     description:
-      "Boost your rankings and drive organic traffic with our expert SEO strategies.",
-    image: "https://picsum.photos/seed/seo/400/300",
-    slug: "seo",
+      "Transform customer interactions with cloud contact center solutions designed to enhance engagement and business growth.",
+    image: "https://picsum.photos/seed/cx/400/300",
+    slug: "cx-as-a-service",
   },
   {
     id: "2",
-    icon: <FaBullhorn size={24} />,
-    title: "Social Media Marketing",
+    title: "Conversational AI",
     description:
-      "Engage your audience and grow your brand through social media campaigns.",
-    image: "https://picsum.photos/seed/smm/400/300",
-    slug: "smm",
+      "Deliver intelligent customer interactions using advanced AI and conversational platforms.",
+    image: "https://picsum.photos/seed/ai/400/300",
+    slug: "conversational-ai",
   },
   {
     id: "3",
-    icon: <FaChartLine size={24} />,
-    title: "Performance Marketing",
+    title: "Automation as a Service",
     description:
-      "Maximize ROI with targeted ads and data-driven marketing solutions.",
-    image: "https://picsum.photos/seed/performance/400/300",
-    slug: "performance",
+      "Automate repetitive processes with powerful RPA solutions that improve efficiency.",
+    image: "https://picsum.photos/seed/automation/400/300",
+    slug: "automation-as-a-service",
   },
   {
     id: "4",
-    icon: <FaUsers size={24} />,
-    title: "Content Marketing",
+    title: "Workforce Management",
     description:
-      "Create engaging content that resonates with your audience and drives conversions.",
-    image: "https://picsum.photos/seed/content/400/300",
-    slug: "content",
+      "Optimize workforce productivity with AI-powered planning and forecasting tools.",
+    image: "https://picsum.photos/seed/workforce/400/300",
+    slug: "workforce-management",
+  },
+  {
+    id: "5",
+    title: "Unified Communications & Infrastructure",
+    description:
+      "Secure and scalable enterprise communication solutions integrating voice, video and collaboration.",
+    image: "https://picsum.photos/seed/unified/400/300",
+    slug: "unified-communications",
+  },
+  {
+    id: "6",
+    title: "Cloud ERP",
+    description:
+      "Modern cloud ERP powered by Acumatica to streamline operations and scale business growth.",
+    image: "https://picsum.photos/seed/erp/400/300",
+    slug: "cloud-erp",
   },
 ];
-
 export default async function ServicesPage() {
   const servicesFromDB = await getServices();
 

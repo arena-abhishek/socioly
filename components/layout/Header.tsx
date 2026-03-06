@@ -15,33 +15,33 @@ export default function Header() {
   const navItems = [
     {
       label: "SOLUTIONS & SERVICE OFFERINGS",
-      href: "/solutions",
+      href: "/services",
       dropdown: [
         {
           label: "CX & ANALYTICS",
-          href: "/solutions/cx-analytics",
+          href: "/services/cx-analytics",
           subDropdown: [
-            { label: "CX AS A SERVICE", href: "/solutions/cx-as-a-service" },
+            { label: "CX AS A SERVICE", href: "/services/cx-as-a-service" },
             {
               label: "CONVERSATIONAL AI",
-              href: "/solutions/conversational-ai",
+              href: "/services/conversational-ai",
             },
             {
               label: "AUTOMATION AS A SERVICE",
-              href: "/solutions/automation-as-a-service",
+              href: "/services/automation-as-a-service",
             },
             {
               label: "WORKFORCE MANAGEMENT",
-              href: "/solutions/workforce-management",
+              href: "/services/workforce-management",
             },
           ],
         },
         {
           label: "UNIFIED COMMUNICATIONS & INFRA",
-          href: "/solutions/unified-communications",
+          href: "/services/unified-communications",
         },
-        { label: "EXATOIQ", href: "/solutions/exatoiq" },
-        { label: "CLOUD ERP", href: "/solutions/cloud-erp" },
+        { label: "EXATOIQ", href: "/services/exatoiq" },
+        { label: "CLOUD ERP", href: "/services/cloud-erp" },
       ],
     },
 
