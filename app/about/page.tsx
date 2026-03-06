@@ -9,11 +9,13 @@ import CompanyHistory from "@/components/sections/CompanyHistory";
 import WorkProcess from "@/components/sections/WorkProcess";
 import Clients from "@/components/sections/Clients";
 import TeamSection from "@/components/sections/TeamSection";
+import AboutHero from "@/components/sections/AboutHero";
+import { aboutHeroData } from "@/lib/constants/AboutHero";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Socioly's mission, team, and our approach to digital marketing.",
+    "Learn about Exato.ai's mission, team, and our approach to digital marketing.",
 };
 
 export default function AboutPage() {
@@ -32,7 +34,7 @@ export default function AboutPage() {
       />
       <div className="py-24 space-y-32">
         {/* Mission Section */}
-        <section>
+       {/*  <section>
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
@@ -77,7 +79,8 @@ export default function AboutPage() {
               </div>
             </div>
           </Container>
-        </section>
+        </section> */}
+          <AboutHero data={aboutHeroData} />
 
         <WorkProcess />
 

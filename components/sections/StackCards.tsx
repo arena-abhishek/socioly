@@ -91,7 +91,7 @@ export default function StackCards() {
   return (
     <section
       className="relative bg-[#f4f6fb] hidden lg:block"
-      style={{ height: `${cards.length * 120}vh` }}
+      style={{ height: `${cards.length * 100}vh` }}
     >
       {cards.map((card, index) => (
         <div
