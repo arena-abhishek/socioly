@@ -391,6 +391,25 @@
   margin-top: clamp(14px, 1.26vw, 24px);
 }
 
+/* default desktop */
+.stack-section{
+  height: 360vh;
+}
+
+/* short laptops (height 480–700) */
+@media (min-height: 480px) and (max-height: 700px) {
+  .stack-section{
+    height: 450vh;
+  }
+}
+
+/* very short laptops */
+@media (max-height: 480px) {
+  .stack-section{
+    height: 500vh;
+  }
+}
+
 
 
 /* globals.css */

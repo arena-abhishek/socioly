@@ -61,9 +61,38 @@ const cards = [
 ];
 export default function StackCards() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [height, setHeight] = useState(`${cards.length * 100}vh`);
 
+  // height responsive logic
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const updateHeight = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      // mobile / tablet (no animation)
+      if (width < 1024) {
+        setHeight("auto");
+        return;
+      }
+
+      // short laptop screens
+      if (width >= 1024 && width <= 1440 && height >= 480 && height <= 700) {
+        setHeight(`${cards.length * 500}vh`);
+        return;
+      }
+
+      // normal desktop
+      setHeight(`${cards.length * 100}vh`);
+    };
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
+  // scroll animation
+  useEffect(() => {
     if (window.innerWidth < 1024) return;
 
     const handleScroll = () => {
@@ -71,6 +100,7 @@ export default function StackCards() {
 
       cards.forEach((card, i) => {
         const rect = card.getBoundingClientRect();
+
         const progress = Math.min(
           Math.max(1 - rect.top / window.innerHeight, 0),
           1,
@@ -87,11 +117,12 @@ export default function StackCards() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   return (
     <section
-      className="relative bg-[#f4f6fb] hidden lg:block"
-      style={{ height: `${cards.length * 100}vh` }}
+      className="relative bg-[#f4f6fb] "
+      style={{
+        height,
+      }}
     >
       {cards.map((card, index) => (
         <div
@@ -101,7 +132,7 @@ export default function StackCards() {
           className={`
   stack-card
   w-full
-  lg:sticky lg:top-0 lg:h-screen lg:flex
+  lg:sticky lg:top-0 lg:h-screen flex
   items-center justify-center
   py-12 lg:py-0
 `}

@@ -25,7 +25,7 @@ export default function Banner() {
   //   "https://images.unsplash.com/photo-1593642632559-0c9b53aefb7e?auto=format&fit=crop&w=800&q=80", // workspace
   // ];
 
- /*  const images = [
+  /*  const images = [
   "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80", // office team meeting
   "https://plus.unsplash.com/premium_photo-1684249781401-56992dda152d?auto=format&fit=crop&w=800&q=80", // premium office workspace
   "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80", // group working on laptops
@@ -33,24 +33,22 @@ export default function Banner() {
 ]; */
 
   const images = [
-  "/images/hero-banners/banner-1.jpeg",
-  "/images/hero-banners/banner-2.jpeg",
-  "/images/hero-banners/banner-3.jpeg",
-  "/images/hero-banners/banner-4.jpeg",
-  "/images/hero-banners/banner-5.jpeg",
-  "/images/hero-banners/banner-6.jpeg",
-];
+    "/images/hero-banners/banner-1.jpeg",
+    "/images/hero-banners/banner-2.jpeg",
+    "/images/hero-banners/banner-3.jpeg",
+    "/images/hero-banners/banner-4.jpeg",
+    "/images/hero-banners/banner-5.jpeg",
+    "/images/hero-banners/banner-6.jpeg",
+  ];
 
+  const rotateArray = (arr, count) => {
+    return arr.slice(count).concat(arr.slice(0, count));
+  };
 
-
-const rotateArray = (arr, count) => {
-  return arr.slice(count).concat(arr.slice(0, count));
-};
-
-const slider1Images = rotateArray(images, 0);
-const slider2Images = rotateArray(images, 1);
-const slider3Images = rotateArray(images, 2);
-const slider4Images = rotateArray(images, 3);
+  const slider1Images = rotateArray(images, 0);
+  const slider2Images = rotateArray(images, 1);
+  const slider3Images = rotateArray(images, 2);
+  const slider4Images = rotateArray(images, 3);
   /* const slider1Images = [
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // modern office interior
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // laptop & workspace
@@ -84,7 +82,7 @@ const slider4Images = rotateArray(images, 3);
         className="
         relative overflow-hidden text-white text-center
     px-4
-    min-h-[100vh] h-auto
+    h-auto
     flex flex-col justify-center items-center
     md:block
     pt-[clamp(120px,10.5vw,200px)] pb-[clamp(130px,26vw,513px)]
@@ -138,7 +136,8 @@ const slider4Images = rotateArray(images, 3);
 
         <div
           // className="absolute inset-0  md:bottom-0 bottom-[-55px] pointer-events-none z-10">
-          className="absolute inset-0  bottom-0 pointer-events-none z-10">
+          className="absolute inset-0   pointer-events-none z-10"
+        >
           {/* Slider 1 */}
           <Slider
             images={slider1Images}
@@ -187,30 +186,32 @@ const slider4Images = rotateArray(images, 3);
 [@media(min-height:480px)_and_(max-height:768px)]:pb-[150px]
   "
         >
-          <div
-            className="  grid grid-cols-2
+          <div className="">
+            <div
+              className="  grid grid-cols-2
   gap-y-7 gap-x-10
   text-left
   md:flex md:items-center md:gap-7"
-          >
-            {/* Stats */}
-            <Stat number={100000} label="Agents Enabled" suffix="+" />
-            <Stat number={100} label="Business Transformed" />
-            <Stat number={97} label="Customer Retention" suffix="%" />
+            >
+              {/* Stats */}
+              <Stat number={100000} label="Agents Enabled" suffix="+" />
+              <Stat number={100} label="Business Transformed" />
+              <Stat number={97} label="Customer Retention" suffix="%" />
 
-            {/* Play Reel */}
-            <div
-              className="
+              {/* Play Reel */}
+              <div
+                className="
         flex items-center gap-3
   justify-start
   md:justify-start
   cursor-pointer
   hover:scale-105 transition-transform
       "
-              onClick={() => setOpen(true)}
-            >
-              <span className="text-white font-semibold">Play Reel</span>
-              <PlayButton onClick={() => setOpen(true)} />
+                onClick={() => setOpen(true)}
+              >
+                <span className="text-white font-semibold">Play Reel</span>
+                <PlayButton onClick={() => setOpen(true)} />
+              </div>
             </div>
           </div>
         </div>
