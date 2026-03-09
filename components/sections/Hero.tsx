@@ -118,7 +118,7 @@ export default function Banner() {
           </h1>
 
           <a
-            href="/services"
+            href="/contact"
             className="
               inline-flex items-center justify-center
     text-[clamp(0.9rem,1vw,1rem)]
