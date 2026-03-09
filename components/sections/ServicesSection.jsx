@@ -58,8 +58,8 @@ const fallbackServices = [
       "We create technological bridges, like CTI connections and WFM connectors, enabling software and phone systems to communicate seamlessly.",
     image_url:
       "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
-    gradient_from: "from-green-600",
-    gradient_to: "to-teal-500",
+      gradient_from: "from-blue-600",
+    gradient_to: "to-purple-500",
   },
   {
     tag: "Cloud ERP",
@@ -68,8 +68,8 @@ const fallbackServices = [
       "Built using world-class cloud and mobile technology, Acumatica’s applications deliver adaptable and integrated ERP and CRM solutions.",
     image_url:
       "https://images.unsplash.com/photo-1555421689-2d2c6f08333f?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
-    gradient_from: "from-yellow-600",
-    gradient_to: "to-orange-500",
+   gradient_from: "from-indigo-600",
+    gradient_to: "to-purple-600",
   },
 ];
 export default function ServicesSection() {
