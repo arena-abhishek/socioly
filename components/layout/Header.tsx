@@ -13,7 +13,7 @@ export default function Header() {
   const pathname = usePathname();
   const navItems = [
     {
-      label: "SOLUTIONS & SERVICE OFFERINGS",
+      label: "Solutioning",
       href: "/services",
       dropdown: [
         {
