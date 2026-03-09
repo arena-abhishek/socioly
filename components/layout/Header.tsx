@@ -33,7 +33,7 @@ export default function Header() {
           ],
         },
         {
-          label: "UNIFIED COMMUNICATIONS & INFRA",
+          label: "UNIFIED COMMUNICATIONS",
           href: "/services/unified-communications",
         },
         { label: "EXATOIQ", href: "/services/exatoiq" },
