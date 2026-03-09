@@ -13,7 +13,7 @@ export default function Header() {
   const pathname = usePathname();
   const navItems = [
     {
-      label: "Solutioning",
+      label: "OUR SOLUTIONS",
       href: "/services",
       dropdown: [
         {
@@ -58,7 +58,7 @@ export default function Header() {
         { label: "CAREERS", href: "/careers" },
       ],
     },
-    { label: "Investor", href: "/investor" },
+    { label: "INVESTOR", href: "/investor" },
   ];
   // Scroll shrink effect
   useEffect(() => {
