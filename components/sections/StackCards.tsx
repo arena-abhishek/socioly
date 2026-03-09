@@ -77,7 +77,7 @@ export default function StackCards() {
 
       // short laptop screens
       if (width >= 1024 && width <= 1440 && height >= 480 && height <= 700) {
-        setHeight(`${cards.length * 100}vh`);
+        setHeight(`${cards.length * 500}vh`);
         return;
       }
 
