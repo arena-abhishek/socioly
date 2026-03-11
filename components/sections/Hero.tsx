@@ -130,7 +130,7 @@ export default function Banner() {
     hover:bg-indigo-600 hover:text-white
     transition-all duration-300"
           >
-            Talk To CX Expert ↗
+            Talk To AI Expert ↗
           </a>
         </div>
 
