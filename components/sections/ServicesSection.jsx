@@ -15,7 +15,7 @@ const fallbackServices = [
     tag: "CX as a Service",
     title: "Cloud Contact Center Solutions",
     description:
-      "Transform your customer interactions into growth opportunities with our Cloud Contact Center solutions.",
+      "Transform customer interactions with scalable cloud contact center solutions that improve engagement, support efficiency, and overall service experience.",
     image_url:
       "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
     gradient_from: "from-fuchsia-600",
@@ -25,7 +25,7 @@ const fallbackServices = [
     tag: "Conversational AI",
     title: "AI-Powered Conversations",
     description:
-      "Empower your business with cutting-edge Conversational AI solutions curated from platforms like Kore.AI, Yellow.AI, Google CCAI, Amazon, Microsoft, and more.",
+      "Enable intelligent conversations using advanced AI platforms like Kore.AI, Yellow.AI, Google CCAI, Amazon, and Microsoft technologies.",
     image_url:
       "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
     gradient_from: "from-blue-600",
@@ -35,7 +35,7 @@ const fallbackServices = [
     tag: "Automation as a Service",
     title: "Efficiency & Agility",
     description:
-      "At Exato, we are the Automation Accelerator, driving organizations towards unprecedented efficiency and agility.",
+      "Accelerate business growth through intelligent automation solutions designed to improve efficiency, agility, and productivity across operations.",
     image_url:
       "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
     gradient_from: "from-purple-600",
@@ -45,9 +45,9 @@ const fallbackServices = [
     tag: "Unified Communications",
     title: "Enterprise Communication Solutions",
     description:
-      "Delivers integrated technology solutions for secure, scalable, and efficient enterprise communication and IT infrastructure management.",
+      "Deliver secure and scalable communication systems that integrate collaboration tools, enterprise infrastructure, and modern digital workplace technologies.",
     image_url:
-      "https://plus.unsplash.com/premium_photo-1723291315024-89b911f46471?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
     gradient_from: "from-indigo-600",
     gradient_to: "to-purple-600",
   },
@@ -55,20 +55,20 @@ const fallbackServices = [
     tag: "Exato IQ",
     title: "Seamless System Integrations",
     description:
-      "We create technological bridges, like CTI connections and WFM connectors, enabling software and phone systems to communicate seamlessly.",
+      "Build seamless integrations like CTI connections and WFM connectors enabling enterprise software and telephony systems to work together efficiently.",
     image_url:
       "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
-      gradient_from: "from-blue-600",
+    gradient_from: "from-blue-600",
     gradient_to: "to-purple-500",
   },
   {
     tag: "Cloud ERP",
     title: "Modern ERP & CRM Solutions",
     description:
-      "Built using world-class cloud and mobile technology, Acumatica’s applications deliver adaptable and integrated ERP and CRM solutions.",
+      "Leverage modern cloud ERP and CRM platforms that deliver scalable, integrated, and mobile-ready business management solutions for enterprises.",
     image_url:
-      "https://images.unsplash.com/photo-1555421689-2d2c6f08333f?crop=entropy&cs=tinysrgb&fit=max&h=500&w=800",
-   gradient_from: "from-indigo-600",
+      "https://www.nextiva.com/cdn-cgi/image/width=1200,height=675,fit=cover,gravity=auto,format=auto/blog/wp-content/uploads/sites/10/2024/01/customer-experience-cx-software-1.webp?resize=1024,576",
+    gradient_from: "from-indigo-600",
     gradient_to: "to-purple-600",
   },
 ];
@@ -171,14 +171,16 @@ export default function ServicesSection() {
 bg-gradient-to-br ${service.gradient_from} ${service.gradient_to} 
 flex flex-col justify-between h-[520px]`}
               >
-                <div>
+                <div className="h-[260px]">
                   <span className="text-sm bg-white/20 px-4 py-1 rounded-full">
                     {service.tag}
                   </span>
 
-                  <h3 className="text-2xl font-bold mt-6">{service.title}</h3>
+                  <h3 className="text-2xl font-bold mt-6 line-clamp-1">
+                    {service.title}
+                  </h3>
 
-                  <p className="mt-4 text-sm text-white/90">
+                  <p className="mt-4 text-sm text-white/90 line-clamp-3">
                     {service.description}
                   </p>
 

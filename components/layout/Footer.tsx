@@ -14,9 +14,9 @@ export default function Footer() {
       {/* ===== Footer Top ===== */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 items-start gap-10">
             {/* Logo + Social */}
-            <div className="flex flex-col items-center lg:items-start gap-5">
+            <div className="flex flex-col items-start gap-5">
               <Image
                 src="/images/exato.png"
                 alt="Exato.ai Logo"
@@ -46,7 +46,7 @@ export default function Footer() {
             </div>
 
             {/* Call */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-start md:justify-center gap-4">
               <div className="h-12 w-12 rounded-full bg-indigo-600 flex items-center justify-center">
                 ☎
               </div>
@@ -62,7 +62,7 @@ export default function Footer() {
             </div>
 
             {/* Email */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-start md:justify-end gap-4">
               <div className="h-12 w-12 rounded-full bg-indigo-600 flex items-center justify-center">
                 ✉
               </div>
@@ -226,6 +226,8 @@ export default function Footer() {
 
           <div>
             <p className="text-indigo-400 font-semibold">India</p>
+
+            <p className="text-white font-medium mt-2">Noida</p>
             <p>
               Exato Technologies Limited.
               <br />
@@ -233,7 +235,9 @@ export default function Footer() {
               <br />
               Noida, Uttar Pradesh, 201301
             </p>
-            <p className="mt-2">
+
+            <p className="text-white font-medium mt-3">Mumbai</p>
+            <p>
               Exato Technologies Limited
               <br />
               601 A/2, Shubham Centre,

@@ -8,8 +8,8 @@ export default function Clients() {
   const duplicatedClients = [...clientsData, ...clientsData];
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-20 bg-white overflow-hidden w-full">
+      <div className="w-full px-6">
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -25,19 +25,19 @@ export default function Clients() {
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_50%,white,transparent_60%)]" />
 
           {/* Slider */}
-          <div className="relative py-12">
-            <div className="flex gap-16 animate-marquee whitespace-nowrap">
+          <div className="relative py-14">
+            <div className="flex gap-20 animate-marquee whitespace-nowrap">
               {duplicatedClients.map((client, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-center min-w-[150px]"
+                  className="flex items-center justify-center min-w-[180px]"
                 >
                   <Image
                     src={client.logo}
                     alt={client.name}
-                    width={120}
-                    height={60}
-                    className="object-contain  opacity-90 hover:opacity-100 transition"
+                    width={160}
+                    height={80}
+                    className="object-contain opacity-90 hover:opacity-100 transition"
                   />
                 </div>
               ))}

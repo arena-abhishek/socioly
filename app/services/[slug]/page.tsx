@@ -9,7 +9,6 @@ import BreadcrumbSection from "@/components/ui/BreadcrumbSection";
 import { ServiceDescription } from "@/types/service";
 import { DUMMY_SERVICES } from "@/lib/constants/services";
 
-
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -28,8 +27,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         : service.description?.overview?.[0] || "",
   };
 }
-
-
 
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
@@ -66,21 +63,21 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       <div className="py-24 space-y-24">
         <Container>
-          <div className="grid lg:grid-cols-3 gap-16 items-start">
+          <div className="grid lg:grid-cols-3 gap-16 items-start lg:flex-row flex-col-reverse">
             {/* ================= LEFT SIDEBAR ================= */}
-
-            <aside className="lg:col-span-1 space-y-6 sticky top-24 self-start">
+            <aside className="lg:col-span-1 space-y-6 lg:sticky lg:top-24 self-start order-2 lg:order-1">
+              {/* Sidebar Links */}
               <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-3">
                 {DUMMY_SERVICES.map((item) => (
                   <Link
                     key={item.slug}
                     href={`/services/${item.slug}`}
                     className={`flex justify-between items-center px-4 py-3 rounded-xl text-sm font-medium transition
-                    ${
-                      item.slug === slug
-                        ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white"
-                        : "bg-slate-100 hover:bg-slate-200 text-slate-700"
-                    }`}
+          ${
+            item.slug === slug
+              ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white"
+              : "bg-slate-100 hover:bg-slate-200 text-slate-700"
+          }`}
                   >
                     {item.title}
                     <span>↗</span>
@@ -88,15 +85,14 @@ export default async function ServiceDetailPage({ params }: Props) {
                 ))}
               </div>
 
+              {/* Contact CTA */}
               <div className="p-8 rounded-3xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white space-y-6 shadow-lg">
                 <h3 className="text-2xl font-bold">
                   Don't Hesitate to Contact Us
                 </h3>
-
                 <p className="text-white/80 text-sm">
                   At our IT solution company, we are committed to excellence.
                 </p>
-
                 <Button
                   asChild
                   className="bg-white text-slate-900 hover:bg-slate-100"
@@ -107,10 +103,8 @@ export default async function ServiceDetailPage({ params }: Props) {
             </aside>
 
             {/* ================= RIGHT CONTENT ================= */}
-
-            <div className="lg:col-span-2 space-y-12">
+            <div className="lg:col-span-2 space-y-12 order-1 lg:order-2">
               {/* IMAGE */}
-
               <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[16/9]">
                 <Image
                   src={
@@ -125,10 +119,8 @@ export default async function ServiceDetailPage({ params }: Props) {
               </div>
 
               {/* OVERVIEW */}
-
               <div className="space-y-6">
                 <h1 className="text-3xl md:text-4xl font-bold">Overview</h1>
-
                 {overview.map((para: string, i: number) => (
                   <p key={i} className="text-slate-600 leading-relaxed">
                     {para}
@@ -137,10 +129,8 @@ export default async function ServiceDetailPage({ params }: Props) {
               </div>
 
               {/* FEATURES */}
-
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold">Features</h2>
-
                 <ul className="space-y-4">
                   {features.map((feature: string) => (
                     <li key={feature} className="flex gap-3">
@@ -152,19 +142,17 @@ export default async function ServiceDetailPage({ params }: Props) {
               </div>
 
               {/* GOAL */}
-
-              <div className="space-y-6">
-                <h2 className="text-2xl font-bold">Goal</h2>
-
-                <p className="text-slate-600 leading-relaxed">{goal}</p>
-              </div>
+              {goal && (
+                <div className="space-y-6">
+                  <h2 className="text-2xl font-bold">Goal</h2>
+                  <p className="text-slate-600 leading-relaxed">{goal}</p>
+                </div>
+              )}
 
               {/* PROCESS */}
-
               {process.length > 0 && (
                 <div className="space-y-6">
                   <h2 className="text-2xl font-bold">Our Process</h2>
-
                   <div className="space-y-4">
                     {process.map((step: string, i: number) => (
                       <div
@@ -174,7 +162,6 @@ export default async function ServiceDetailPage({ params }: Props) {
                         <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-sm font-semibold shrink-0">
                           {i + 1}
                         </div>
-
                         <p className="text-slate-600">{step}</p>
                       </div>
                     ))}
@@ -183,13 +170,11 @@ export default async function ServiceDetailPage({ params }: Props) {
               )}
 
               {/* FAQ */}
-
               {faq.length > 0 && (
                 <div className="space-y-6">
                   <h2 className="text-2xl font-bold">
                     Frequently Asked Questions
                   </h2>
-
                   <div className="space-y-4">
                     {faq.map((item, i) => (
                       <details
@@ -198,12 +183,10 @@ export default async function ServiceDetailPage({ params }: Props) {
                       >
                         <summary className="cursor-pointer font-semibold text-slate-800 flex justify-between items-center">
                           {item.question}
-
                           <span className="text-slate-400 group-open:rotate-45 transition">
                             +
                           </span>
                         </summary>
-
                         <p className="mt-3 text-slate-600 leading-relaxed">
                           {item.answer}
                         </p>

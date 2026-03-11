@@ -46,7 +46,7 @@
   hover:bg-indigo-600 hover:text-white 
   transition text-lg;
 }
-
+/* Continuous marquee loop */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -56,31 +56,12 @@
   }
 }
 
+/* Apply the marquee animation */
 .animate-marquee {
-  animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes marqueeReverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0%); }
-}
-
-@keyframes waveMove {
-  0% { transform: translateX(0px); }
-  100% { transform: translateX(-200px); }
-}
-
-.animate-marquee {
-  animation: marquee 10s linear infinite;
-}
-
-.animate-marquee-reverse {
-  animation: marqueeReverse 10s linear infinite;
+  display: flex;
+  gap: 5rem;           /* gap between logos */
+  animation: marquee 10s linear infinite; /* duration = speed, lower = faster */
+  white-space: nowrap;
 }
 
 .animate-wave {
