@@ -170,15 +170,18 @@ export default function HeroSection() {
         }
 
         /* ── Vectors ───────────────────────────────────────────── */
-        .ul-banner-vectors img {
+        /* Original CSS targets img but we use inline SVG — target both */
+        .ul-banner-vectors img,
+        .ul-banner-vectors svg {
           position: absolute;
-          z-index: 2;
+          z-index: 3;
           pointer-events: none;
         }
         .ul-banner-vectors .vector-1 {
           left: clamp(350px, 37.62vw, 716px);
           bottom: clamp(68px, 5.68vw, 108px);
           max-width: clamp(88px, 9.35vw, 178px);
+          width: clamp(88px, 9.35vw, 178px);
         }
         @media screen and (max-width: 991px) {
           .ul-banner-vectors .vector-1 { display: none; }
@@ -187,14 +190,16 @@ export default function HeroSection() {
           right: clamp(25px, 2.63vw, 50px);
           bottom: clamp(15px, 12.09vw, 230px);
           max-width: clamp(295px, 31vw, 590px);
+          width: clamp(295px, 31vw, 590px);
         }
         @media screen and (max-width: 991px) {
           .ul-banner-vectors .vector-2 { display: none; }
         }
 
-        /* ── Slider wrapper ────────────────────────────────────── */
+        /* Slider wrapper sits BELOW vectors (z-index: 2 < vectors z-index: 3) */
         .ul-banner-slider-wrapper {
           pointer-events: none;
+          z-index: 2;
         }
         /* All Swipers inside wrapper are absolutely positioned */
         .ul-banner-slider-wrapper .ul-banner-slider {
@@ -413,30 +418,42 @@ export default function HeroSection() {
           </a>
         </div>
 
-        {/* Vectors — SVG replacements for the original .svg files */}
+        {/* Vectors — exact original SVG files */}
         <div className="ul-banner-vectors">
-          {/* vector-1: dashed rings */}
+          {/* vector-1: parallelogram blue shape (banner-vector-2.svg) */}
           <svg
             className="vector-1"
-            viewBox="0 0 178 178"
+            width="178"
+            height="126"
+            viewBox="0 0 178 126"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden
           >
-            <circle cx="89" cy="89" r="88" stroke="white" strokeWidth="2" strokeDasharray="8 6" opacity="0.4" />
-            <circle cx="89" cy="89" r="55" stroke="white" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.25" />
+            <path d="M107.574 0H178L73.9087 126H0L107.574 0Z" fill="#2B4DFF"/>
           </svg>
 
-          {/* vector-2: large ellipse outline */}
+          {/* vector-2: large outlined parallelogram (banner-vector-3.svg) */}
           <svg
             className="vector-2"
-            viewBox="0 0 590 400"
+            width="590"
+            height="512"
+            viewBox="0 0 590 512"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden
           >
-            <ellipse cx="295" cy="200" rx="294" ry="199" stroke="white" strokeWidth="1.5" opacity="0.2" />
-            <ellipse cx="295" cy="200" rx="210" ry="135" stroke="white" strokeWidth="1" opacity="0.12" />
+            <path
+              d="M171.317 510H12.2429C3.78269 510 -0.854941 500.148 4.53586 493.628L408 5.62805C409.9 3.33028 412.726 2 415.707 2H578.144C586.623 2 591.255 11.8904 585.825 18.4033L178.998 506.403C177.098 508.682 174.285 510 171.317 510Z"
+              stroke="url(#paint0_linear_439_173)"
+              strokeWidth="3"
+            />
+            <defs>
+              <linearGradient id="paint0_linear_439_173" x1="295.25" y1="2" x2="295.25" y2="510" gradientUnits="userSpaceOnUse">
+                <stop stopColor="white"/>
+                <stop offset="1" stopColor="white" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
           </svg>
         </div>
 
