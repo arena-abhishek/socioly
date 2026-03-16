@@ -6,7 +6,6 @@ import Container from '@/components/ui/Container';
 import { getPublishedPosts, getServices } from '@/lib/fetchers';
 import Image from 'next/image';
 // import PremiumHero from '@/components/sections/Hero';
-import Hero from '@/components/sections/Hero';
 import StackCards from '@/components/sections/StackCards';
 import WhyChoose from '@/components/sections/WhyChoose';
 import ServicesSection from '@/components/sections/ServicesSection';
