@@ -70,7 +70,7 @@ img {
   display: block;
 }
 
-a {
+/* a {
   text-decoration: none;
   display: inline-block;
   color: var(--black);
@@ -78,7 +78,7 @@ a {
 
 a:hover {
   color: var(--ul-primary);
-}
+} */
 
 i {
   display: inline-flex;
@@ -93,14 +93,14 @@ p:last-child {
   margin-bottom: 0;
 }
 
-ul {
+/* ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-
+ */
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+  /* margin: 0; */
   line-height: 1.2;
 }
 
