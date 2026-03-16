@@ -10,21 +10,25 @@ const supabase = createClient(
 // ── Fallbacks ─────────────────────────────────────────────────────
 
 export const FALLBACK_HERO: HeroContent = {
-  sub_title: "Amazing Solutions For Business",
-  title: "Trusted IT Support Designed to Safeguard Your Business",
-  cta_text: "Our Services",
-  cta_href: "/services",
-  video_url: "https://youtu.be/WUB2pSkwN2M?si=mE9CqwAUIjpYiwGm",
+  sub_title: "Next-Gen Engagement",
+  title: "Evolving Customer Journeys: Better Customer Experience",
+  cta_text: "Talk To AI Expert",
+  cta_href: "/contact",
+  video_url: "https://youtu.be/WUB2pSkwN2M",
+
   images: [
-    "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=900&q=80",
-    "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80",
-    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80",
-    "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80",
+    "/images/hero-banners/banner-1.jpeg",
+    "/images/hero-banners/banner-2.jpeg",
+    "/images/hero-banners/banner-3.jpeg",
+    "/images/hero-banners/banner-4.jpeg",
+    "/images/hero-banners/banner-5.jpeg",
+    "/images/hero-banners/banner-6.jpeg",
   ],
+
   stats: [
-    { number: "20.5K",  label: "Projects Done"  },
-    { number: "100.5K", label: "Happy Clients"   },
-    { number: "150.5K", label: "Team Members"    },
+    { number: "100000+", label: "Agents Enabled" },
+    { number: "100", label: "Business Transformed" },
+    { number: "97%", label: "Customer Retention" },
   ],
 };
 
@@ -32,46 +36,53 @@ export const FALLBACK_ABOUT: AboutContent = {
   tabs: [
     {
       id: "about-tab-1",
-      nav_label: "Problem Solving",
-      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",
+      nav_label: "Who We Are",
+      image: "/images/about-tab-img.png",
       sub_title: "About Us",
-      title: "Where CX Meets Excellence",
-      description: "At Exato, we proudly bear the title of 'Experience Integrator.' With a commitment to our mission, we've partnered with over 100 businesses, helping them achieve exceptional CX and EX results.",
+      title: "AI-Powered Customer Experience Experts",
+      description:
+        "We help businesses transform customer engagement using AI-driven automation, conversational intelligence, and data insights. Our solutions improve customer journeys, increase retention, and drive measurable growth.",
       list_items: [
-        "Strategic Partnerships",
-        "Innovation-Driven Excellence",
-        "Proven Outcomes",
-        "Dedication to the Future",
+        "AI-powered CX automation",
+        "Omnichannel customer engagement",
+        "Scalable enterprise solutions",
+        "Data-driven decision making",
       ],
       cta_text: "Know More",
       cta_href: "/about",
     },
+
     {
       id: "about-tab-2",
       nav_label: "Our Mission",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
+      image: "/images/about-tab-img-2.png",
       sub_title: "Our Mission",
-      title: "Industry-Focused Technology Solutions",
-      description: "Exato serves key sectors including BFSI, Healthcare, Retail, Telecom, Manufacturing, and IT/ITeS & BPO/KPO, delivering solutions that address specific business challenges.",
+      title: "Transforming Businesses Through Intelligent Automation",
+      description:
+        "Our mission is to empower organizations with AI technologies that streamline operations, enhance customer satisfaction, and unlock new growth opportunities.",
       list_items: [
-        "Retail: AI-driven product recommendations & loyalty analytics",
-        "Telecom: Customer churn prediction & omnichannel CX deployment",
-        "Manufacturing: Supply chain optimization & predictive revenue models",
+        "Automate customer support with AI agents",
+        "Improve operational efficiency",
+        "Deliver personalized customer experiences",
+        "Enable data-backed business strategies",
       ],
       cta_text: "Know More",
       cta_href: "/about",
     },
+
     {
       id: "about-tab-3",
       nav_label: "Our Vision",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+      image: "/images/about-tab-img-3.png",
       sub_title: "Our Vision",
-      title: "Engage. Understand. Innovate: The AI-Powered Conversation Revolution",
-      description: "Leveraging LLM models, Generative AI, and NLP engines, we craft conversations that don't just respond, but truly understand and engage.",
+      title: "Building the Future of AI Conversations",
+      description:
+        "We envision a world where businesses and customers interact seamlessly through intelligent, context-aware AI conversations that feel natural, efficient, and impactful.",
       list_items: [
-        "Next-Gen Conversations: Global Adaptability, Context-Aware",
-        "Mending the Fragmented Landscape: Bridging CX and EX Gaps",
-        "Empowering Your Business: Tangible Outcomes with Our Solutions",
+        "Next-gen conversational AI",
+        "Context-aware intelligent agents",
+        "Seamless human + AI collaboration",
+        "Future-ready customer engagement",
       ],
       cta_text: "Know More",
       cta_href: "/about",
