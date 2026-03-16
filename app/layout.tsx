@@ -58,7 +58,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <Header />
+        {/* <Header /> */}
         <main id="main-content" className="grow">
           {children}
         </main>
