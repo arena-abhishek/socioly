@@ -14,6 +14,8 @@ import FaqSection from '@/components/sections/FaqSection';
 import WorkProcess from '@/components/sections/WorkProcess';
 import Clients from '@/components/sections/Clients';
 import ReviewContactSection from '@/components/sections/ReviewContactSection';
+import { getHomepageContent } from '@/lib/homepage';
+import HeroSection from '@/components/sections/HeroSection';
 
 export const revalidate = 60; // ISR: Revalidate every 60 seconds
 
@@ -22,6 +24,7 @@ export default async function HomePage() {
     getPublishedPosts(),
     getServices(),
   ]);
+  const { hero, about } = await getHomepageContent();
 
   const featuredPosts = posts.slice(0, 3);
   const featuredServices = services.slice(0, 4);
@@ -30,12 +33,12 @@ export default async function HomePage() {
     // <div className="space-y-24 pb-24 overflow-x-hidden">
     <div className="  overflow-x-clip">
     {/* Hero Section */}
-      <Hero />
+      {/* <Hero /> */}
 
   
 
       {/* Services Section */}
-
+      <HeroSection  content={hero}  />
       <StackCards />
       <ServicesSection />
       <Clients/>
