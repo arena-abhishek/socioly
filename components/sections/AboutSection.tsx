@@ -1,6 +1,224 @@
 "use client";
 
 // ── globals.css imported in app/layout.tsx — NOT here ────────────
+// About section ke saare .ul-about-* styles globals.css mein hain
+
+import { useEffect, useRef } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
+import type { AboutContent } from "@/types/homepage";
+
+interface AboutSectionProps {
+  content: AboutContent | null;
+}
+
+export default function AboutSection({ content }: AboutSectionProps) {
+  const navRef = useRef<HTMLDivElement>(null);
+  const tabsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  // ─────────────────────────────────────────────────────────────────
+  // Exact original JS — checkCardPosition()
+  //   • class-80  when card.top <= 80% viewport  (fade-in animation)
+  //   • class-20  when card.top <= 20% viewport  (pill colour change)
+  //   • tab-sticky-nav marginLeft cascading offset
+  //
+  // Exact original JS — updateScrollSpyNav() (scrollSpy replacement)
+  //   • offset: -420 → activeIndex when rect.top <= 420
+  // ─────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (!content) return;
+
+    const tabs = tabsRef.current.filter(Boolean) as HTMLDivElement[];
+    const navLinks = navRef.current
+      ? Array.from(navRef.current.querySelectorAll<HTMLAnchorElement>("a"))
+      : [];
+
+    // ── original checkCardPosition ──────────────────────────────
+    function checkCardPosition() {
+      const vh = window.innerHeight;
+      let totalWidth = 0;
+
+      tabs.forEach((card, index) => {
+        const top = card.getBoundingClientRect().top;
+
+        // class-80: fade-in trigger (80% of viewport)
+        if (top <= vh * 0.8) {
+          card.classList.add("class-80");
+        } else {
+          card.classList.remove("class-80");
+        }
+
+        // class-20: pill colour shift (20% of viewport)
+        if (top <= vh * 0.2) {
+          card.classList.add("class-20");
+        } else {
+          card.classList.remove("class-20");
+        }
+
+        // tab-sticky-nav cascading marginLeft
+        const tabNav = card.querySelector<HTMLElement>(".tab-sticky-nav");
+        if (tabNav) {
+          tabNav.style.marginLeft = index === 0 ? "0px" : `${totalWidth}px`;
+          totalWidth += tabNav.offsetWidth + 10;
+        }
+      });
+    }
+
+    // ── original scrollSpy with offset -420 ────────────────────
+    function updateScrollSpyNav() {
+      let activeIndex = -1;
+      tabs.forEach((tab, i) => {
+        // offset -420 means section is "active" when its top <= 420px from viewport top
+        if (tab.getBoundingClientRect().top <= 420) activeIndex = i;
+      });
+      navLinks.forEach((link, i) => {
+        link.classList.toggle("active", i === activeIndex);
+      });
+    }
+
+    function onScroll() {
+      checkCardPosition();
+      updateScrollSpyNav();
+    }
+
+    // Run immediately on mount (elements may already be in viewport)
+    checkCardPosition();
+    updateScrollSpyNav();
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [content]);
+
+  // ── Smooth scroll on nav/pill click ──────────────────────────
+  function handleNavClick(
+    e: React.MouseEvent<HTMLAnchorElement>,
+    tabId: string,
+  ) {
+    e.preventDefault();
+    document.getElementById(tabId)?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  if (!content) return null;
+
+  const { tabs } = content;
+
+  return (
+    <section className="ul-about ul-section-spacing">
+      <div className="ul-about-container">
+        <div className="ul-about-content-wrapper">
+          {/* ── Desktop floating nav pills ─────────────────────────
+              Original HTML: .ul-about-content-nav  d-none
+              (hidden on mobile via CSS, sticky on desktop)
+          ────────────────────────────────────────────────────── */}
+          <div ref={navRef} className="ul-about-content-nav d-none">
+            {tabs.map((tab) => (
+              <a
+                key={tab.id}
+                href={`#${tab.id}`}
+                onClick={(e) => handleNavClick(e, tab.id)}
+              >
+                {tab.nav_label}
+                <i>
+                  <FiArrowUpRight />
+                </i>
+              </a>
+            ))}
+          </div>
+
+          {/* ── Tab cards ──────────────────────────────────────────
+              Original HTML: .ul-about-content-tabs > .ul-about-content-tab
+              Each card:
+                • sticky positioned
+                • opacity 0 → 1 via class-80
+                • clip-path border via ::before / ::after (in CSS)
+                • .tab-sticky-nav pill (hidden on mobile)
+                • Bootstrap .row .row-cols-md-2 grid
+          ────────────────────────────────────────────────────── */}
+          <div className="ul-about-content-tabs">
+            {tabs.map((tab, index) => (
+              <div
+                key={tab.id}
+                id={tab.id}
+                className="ul-about-content-tab tab ul-about-sticky"
+                ref={(el) => {
+                  tabsRef.current[index] = el;
+                }}
+              >
+                {/* Inline sticky pill — positioned absolutely on the card */}
+                <a
+                  href={`#${tab.id}`}
+                  className="tab-sticky-nav"
+                  onClick={(e) => handleNavClick(e, tab.id)}
+                >
+                  {tab.nav_label}
+                  <i>
+                    <FiArrowUpRight />
+                  </i>
+                </a>
+
+                {/* Original: row row-cols-md-2 row-cols-1 align-items-center */}
+                <div className="row row-cols-md-2 row-cols-1 align-items-center">
+                  {/* Image col */}
+                  <div className="col">
+                    <div className="ul-about-content-tab-img">
+                      <img src={tab.image} alt={tab.title} loading="lazy" />
+                    </div>
+                  </div>
+
+                  {/* Text col */}
+                  <div className="col">
+                    <div className="ul-about-content-tab-txt">
+                      <span className="ul-section-sub-title">
+                        {tab.sub_title}
+                      </span>
+                      <h2 className="ul-section-title">{tab.title}</h2>
+                      <p className="ul-about-content-tab-descr">
+                        {tab.description}
+                      </p>
+
+                      <ul className="ul-about-content-tab-list">
+                        {tab.list_items.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+
+                      {/* Original: .ul-btn .ul-btn--2 with <span> + <i> inside <a> */}
+                      <a href={tab.cta_href} className="ul-btn ul-btn--2">
+                        <span>{tab.cta_text}</span>
+                        <i>
+                          <FiArrowUpRight />
+                        </i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Background vectors ──────────────────────────────────── */}
+      <div className="ul-about-vectors">
+        <img
+          src="/images/about-vector-1.svg"
+          alt="Decorative abstract vector shape for about section background"
+          className="vector-1"
+          aria-hidden="true"
+        />
+
+        <img
+          src="/images/about-vector-2.png"
+          alt="Decorative gradient vector illustration for about section"
+          className="vector-2"
+          aria-hidden="true"
+        />
+      </div>
+    </section>
+  );
+}
+/* "use client";
+
+// ── globals.css imported in app/layout.tsx — NOT here ────────────
 
 import { useEffect, useRef } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -98,7 +316,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
   return (
     <>
       <style>{`
-        /* ── About section base ──────────────────────────────── */
+   
         .ul-about {
           position: relative;
           z-index: 1;
@@ -114,7 +332,6 @@ export default function AboutSection({ content }: AboutSectionProps) {
           background-color: var(--white);
         }
 
-        /* ── Container ───────────────────────────────────────── */
         .ul-about-container {
           max-width: clamp(1200px, 71.47vw, 1360px);
           margin: auto;
@@ -123,7 +340,6 @@ export default function AboutSection({ content }: AboutSectionProps) {
           .ul-about-container { margin: 0 15px; }
         }
 
-        /* ── Vectors ─────────────────────────────────────────── */
         .ul-about-vectors > * { position: absolute; }
         @media screen and (max-width: 767px) {
           .ul-about-vectors > * { display: none; }
@@ -139,7 +355,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
           max-width: clamp(644px, 39.1vw, 744px);
         }
 
-        /* ── Sticky nav (desktop floating pills) ─────────────── */
+   
         .ul-about-content-nav {
           margin-left: 56%;
           display: flex;
@@ -186,7 +402,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
           border-color: var(--ul-primary);
         }
 
-        /* ── Content wrapper ─────────────────────────────────── */
+        
         .ul-about-content-wrapper {
           border-radius: clamp(20px, 2.1vw, 40px);
           position: relative;
@@ -195,7 +411,6 @@ export default function AboutSection({ content }: AboutSectionProps) {
           .ul-about-content-wrapper { background-color: var(--white); }
         }
 
-        /* ── Individual tab card ─────────────────────────────── */
         .ul-about-content-tab {
           position: sticky;
           top: 130px;
@@ -209,7 +424,6 @@ export default function AboutSection({ content }: AboutSectionProps) {
           opacity: 1;
           transform: translateY(0);
         }
-        /* tab card border shape via ::before / ::after */
         .ul-about-content-tab::before,
         .ul-about-content-tab::after {
           content: "";
@@ -236,7 +450,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
           }
         }
 
-        /* tab-sticky-nav (the inline pill that appears on each card) */
+
         .ul-about-content-tab .tab-sticky-nav {
           height: clamp(45px, 2.73vw, 52px);
           border: 1px solid rgba(0,0,0,0.2);
@@ -264,7 +478,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
         }
         .ul-about-content-tab .tab-sticky-nav i { font-size: 11px; }
 
-        /* active / class-20 states — same as original */
+
         .ul-about-content-tab.class-80 .tab-sticky-nav {
           background-color: var(--ul-primary);
           border-color: var(--ul-primary);
@@ -281,7 +495,6 @@ export default function AboutSection({ content }: AboutSectionProps) {
           color: var(--white);
         }
 
-        /* ── Tab inner grid ──────────────────────────────────── */
         .ul-about-tab-row {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -294,7 +507,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
           }
         }
 
-        /* ── Tab image ───────────────────────────────────────── */
+
         .ul-about-content-tab-img img {
           width: 100%;
           height: auto;
@@ -304,12 +517,12 @@ export default function AboutSection({ content }: AboutSectionProps) {
           aspect-ratio: 4 / 3;
         }
 
-        /* ── Tab text block ──────────────────────────────────── */
+
         .ul-about-content-tab-txt {
           padding-top: 40px;
         }
 
-        /* section sub-title pill */
+
         .ul-section-sub-title {
           display: inline-flex;
           align-items: center;
@@ -323,7 +536,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
           margin-bottom: clamp(8px, 0.63vw, 12px);
         }
 
-        /* section title */
+
         .ul-section-title {
           font-size: clamp(22px, 2.1vw, 40px);
           font-weight: 800;
@@ -332,14 +545,14 @@ export default function AboutSection({ content }: AboutSectionProps) {
           margin-bottom: 0;
         }
 
-        /* description */
+
         .ul-about-content-tab-descr {
           color: var(--ul-gray);
           margin-top: clamp(14px, 1.26vw, 24px);
           line-height: 1.75;
         }
 
-        /* bullet list */
+ 
         .ul-about-content-tab-list {
           margin-top: clamp(16px, 1.26vw, 24px);
           margin-bottom: clamp(22px, 2.89vw, 54px);
@@ -363,7 +576,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
           border-radius: 50%;
         }
 
-        /* ── CTA button (ul-btn--2 style) ────────────────────── */
+
         .ul-btn.ul-btn--2 {
           display: inline-flex;
           visibility: hidden;
@@ -409,7 +622,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
         <div className="ul-about-container">
           <div className="ul-about-content-wrapper">
 
-            {/* ── Floating nav pills (desktop) ── */}
+      
             <nav
               ref={navRef}
               className="ul-about-content-nav"
@@ -428,7 +641,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
               ))}
             </nav>
 
-            {/* ── Tab cards ── */}
+      
             <div className="ul-about-content-tabs">
               {tabs.map((tab, index) => (
                 <div
@@ -437,7 +650,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
                   className="ul-about-content-tab tab"
                   ref={(el) => { tabsRef.current[index] = el; }}
                 >
-                  {/* Inline pill (appears on the card itself, positioned absolutely) */}
+              
                   <a
                     href={`#${tab.id}`}
                     className="tab-sticky-nav"
@@ -447,14 +660,14 @@ export default function AboutSection({ content }: AboutSectionProps) {
                     <i><FiArrowUpRight /></i>
                   </a>
 
-                  {/* Two-column grid: image | text */}
+             
                   <div className="ul-about-tab-row">
-                    {/* Image */}
+             
                     <div className="ul-about-content-tab-img">
                       <img src={tab.image} alt={tab.title} loading="lazy" />
                     </div>
 
-                    {/* Text */}
+      
                     <div className="ul-about-content-tab-txt">
                       <span className="ul-section-sub-title">{tab.sub_title}</span>
                       <h2 className="ul-section-title">{tab.title}</h2>
@@ -480,9 +693,8 @@ export default function AboutSection({ content }: AboutSectionProps) {
           </div>
         </div>
 
-        {/* ── Background vectors (SVG placeholders) ── */}
         <div className="ul-about-vectors" aria-hidden>
-          {/* vector-1: bottom-left background shape */}
+ 
           <svg
             className="vector-1"
             viewBox="0 0 744 400"
@@ -502,7 +714,7 @@ export default function AboutSection({ content }: AboutSectionProps) {
             </defs>
           </svg>
 
-          {/* vector-2: right side decoration */}
+
           <svg
             className="vector-2"
             viewBox="0 0 744 600"
@@ -526,3 +738,4 @@ export default function AboutSection({ content }: AboutSectionProps) {
     </>
   );
 }
+ */
