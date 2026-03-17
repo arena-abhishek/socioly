@@ -49,6 +49,8 @@ export default function Banner() {
   const slider2Images = rotateArray(images, 1);
   const slider3Images = rotateArray(images, 2);
   const slider4Images = rotateArray(images, 3);
+  const slider5Images = rotateArray(images, 4);
+  const slider6Images = rotateArray(images, 5);
   /* const slider1Images = [
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // modern office interior
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80", // laptop & workspace

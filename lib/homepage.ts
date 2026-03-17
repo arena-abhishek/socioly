@@ -26,7 +26,7 @@ export const FALLBACK_HERO: HeroContent = {
   ],
 
   stats: [
-    { number: "100000+", label: "Agents Enabled" },
+    { number: "100K+", label: "Agents Enabled" },
     { number: "100", label: "Business Transformed" },
     { number: "97%", label: "Customer Retention" },
   ],
